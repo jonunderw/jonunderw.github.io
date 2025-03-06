@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name - Resume</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #1a1a1a;
+            color: white;
+        }
+        .section-wrapper {
+            background-color: #2a2a2a;
+            padding: 50px;
+            margin: 20px 0;
+            border-radius: 10px;
+        }
+        .home-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: left;
+            padding: 50px;
+        }
+        .home-section img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            margin-right: 20px;
+        }
+        .container { max-width: 800px; }
+        nav.navbar {
+            background-color: #1a1a1a !important;
+        }
+        .navbar-brand {
+            font-size: 1.5rem;
+            font-weight: bold;
+            white-space: nowrap;
+        }
+        .footer {
+            background-color: #1a1a1a;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            margin-top: 20px;
+        }
+        .footer a {
+            color: #1DA1F2;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#home">Your Name</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#experiences">Experiences</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#interests">Interests</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <section id="home" class="home-section section-wrapper" style="margin-top: 80px;">
+        <div class="container d-flex align-items-center">
+            <img src="your-image.jpg" alt="Your Name">
+            <div>
+                <h1>Your Name</h1>
+                <h2>Senior Technical Product Manager</h2>
+                <p>Welcome to my personal resume site. Here you'll find my experiences, interests, and more.</p>
+            </div>
+        </div>
+    </section>
+    
+    <section id="experiences" class="py-5 text-center section-wrapper">
+        <div class="container">
+            <h2>Experiences</h2>
+            <p>Senior Technical Product Manager | Company Name | Year - Present</p>
+            <p>Software Engineer | Previous Company | Year - Year</p>
+        </div>
+    </section>
+    
+    <section id="interests" class="py-5 text-center section-wrapper">
+        <div class="container">
+            <h2>Interests</h2>
+            <p>Exploring product management trends, reading about Indian history and folklore, and discussing breakthrough ideas.</p>
+        </div>
+    </section>
+    
+    <footer class="footer">
+        <div class="container">
+            <p>Connect with me:</p>
+            <a href="#" target="_blank">LinkedIn</a>
+            <a href="#" target="_blank">GitHub</a>
+            <a href="#" target="_blank">Twitter</a>
+        </div>
+    </footer>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
