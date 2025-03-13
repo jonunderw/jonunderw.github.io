@@ -5,77 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jon Underwood - Resume</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        body {
-            background-color: #1a1a1a;
-            color: white;
-        }
-        .section-wrapper {
-            background-color: #2a2a2a;
-            padding: 50px;
-            margin: 20px 0;
-            border-radius: 10px;
-        }
-        .home-section {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: left;
-            padding: 50px;
-        }
-        .home-section img {
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            margin-right: 20px;
-        }
-        .container { max-width: 800px; }
-        nav.navbar {
-            background-color: #1a1a1a !important;
-        }
-        .navbar-brand {
-            font-size: 1.5rem;
-            font-weight: bold;
-            white-space: nowrap;
-        }
-        .footer {
-            background-color: #1a1a1a;
-            color: white;
-            padding: 20px 0;
-            text-align: center;
-            margin-top: 20px;
-        }
-        .footer a {
-            color: #1DA1F2;
-            margin: 0 10px;
-            text-decoration: none;
-        }
-        .collapsible {
-            background-color: #444;
-            color: white;
-            cursor: pointer;
-            padding: 10px;
-            width: 100%;
-            border: none;
-            text-align: left;
-            outline: none;
-            font-size: 1.2rem;
-        }
-        .active, .collapsible:hover {
-            background-color: #555;
-        }
-        .content {
-            padding: 0 18px;
-            display: none;
-            overflow: hidden;
-            background-color: #2a2a2a;
-        }
-    </style>
+    <link href="styles.css" rel="stylesheet">
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="#home">Your Name</a>
+            <a class="navbar-brand" href="#home">Jon Underwood</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -91,26 +26,28 @@
     
     <section id="home" class="home-section section-wrapper" style="margin-top: 80px;">
         <div class="container d-flex align-items-center">
-            <img src="your-image.jpg" alt="Your Name">
+            <img src="./your-image.png" alt="">
             <div>
                 <h1>Jon Underwood</h1>
                 <h2>Senior Technical Product Manager</h2>
                 <p>Welcome to my personal resume site. Here you'll find my experiences, interests, and more.</p>
+                
             </div>
         </div>
     </section>
     
     <section id="experiences" class="py-5 text-center section-wrapper">
-        <div class="container">
+        <div id="experiences" class="container">
             <h2>Experiences</h2>
-            <button type="button" class="collapsible">Senior Technical Product Manager | Company Name | Year - Present</button>
-            <div class="content">
-                <p>Details about the role, accomplishments, and milestones.</p>
-                <p>Refer to the markdown file for more details: <a href="career-timeline.md">career-timeline.md</a></p>
             </div>
-            <button type="button" class="collapsible">Software Engineer | Previous Company | Year - Year</button>
-            <div class="content">
-                <p>Details about the role, accomplishments, and milestones.</p>
+            <div class="section-wrapper">
+                <p>placeholder</p>
+            </div>
+            <div class="section-wrapper">
+                <div class="image">
+                <img src="./career-timeline.png" label="Career Timeline" alt="Career Timeline" class="img-fluid">
+                <p>placeholder</p>
+            </div>
             </div>
         </div>
     </section>
@@ -118,67 +55,60 @@
     <section id="interests" class="py-5 text-center section-wrapper">
         <div class="container">
             <h2>Interests</h2>
-            <p>Exploring product management trends, reading about Indian history and folklore, and discussing breakthrough ideas.</p>
-            <!-- Write 2-3 sentences about my general interests and providing them in two categories.-->
+            <p>I've got a lot of interests, probalby too many. However, my interests are broken into Personal and Professional.'.</p>
             <p><b>Professional</b></p>
             <table class="table table-dark table-striped">
                 <thead>
                     <tr>
                         <th>Interest</th>
                         <th>Details</th>
-                        <th>Repoistory</th>
+                        <th>Repository/Site</th>
                     </tr>
                 </thead>
                 <tbody>
+                    <tr>
+                        <td>ProductVerse</td>
+                        <td>Product Verse Assets, Data, & Samples</td>
+                        <td>https://productverse.space</td>
+                    </tr>
                     <tr>
                         <td>PM Toolkit</td>
                         <td>Templates, Scripts, Resources, Notes, & Tools across all phases of the Product Lifecycle</td>
                         <td>https://github.com/jonunderw/pm-tooling</td>
                     </tr>
-                    <tr>
-                        <td>ProductVerse</td>
-                        <td>Product Verse Assets, Data, & Samples</td>
-                        <td>
                 </tbody>
             </table>
+        </div>
+                        
 
-            <p><b>Alternative</b></p>
+
+
+            
+            <p><b>Personal</b></p>
             <table class="table table-dark table-striped">
                 <thead>
                     <tr>
                         <th>Interest</th>
                         <th>Details</th>
-                        <th>Repoistory</th>
+                        <th>Repository</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <td>Maps & 3D Modeling</td>
                         <td>Custom Maps, Geolocational Visualizations & 3D Modeling</td> 
-                        <td>https://github.com/jonunderw/spatial</td> <!-- Write README.md & add content-->
+                        <td>https://github.com/jonunderw/spatial</td>
                     </tr>
                     <tr>
                         <td>Homesteading</td>
                         <td>Gardening/Farming, Preserving, & Recipes Research and Planning Tools</td>
-                        <td>https://github.com/jonunderw/homestead-tooling</td> <!-- Write README.md & add content-->
+                        <td>https://github.com/jonunderw/homestead-tooling</td>
                     </tr>
-                    
                     <tr>
                         <td>Financial Markets Analysis & Portfolio Management</td>
                         <td>Markets analysis Notebooks, Portfolio Management Tooling, & Research</td>
-                        <td>ttps://github.com/jonunderw/asset-management-tooling</td> <!-- Write README.md & add content-->
+                        <td>https://github.com/jonunderw/asset-management-tooling</td>
                     </tr> 
-                    <!-- <tr>
-                        Create and links to repository (with README.md)
-                        <td>History Research</td>
-                        <td>History Research and Data Visualizations</td>
-                        <td>placeholder</td>
-                    </tr> -->
-                    <!-- <tr>
-                        <td>Home Productivity & Automations</td>
-                        <td>Scripts, Recipes, & Resources for productivity enhancing automatinos & workflows.</td>
-                        <td>placeholder</td>
-                    </tr> -->
                 </tbody>
             </table>
         </div>
@@ -187,26 +117,13 @@
     <footer class="footer">
         <div class="container">
             <p>Connect with me:</p>
-            <a href="#" target="_blank">LinkedIn</a> <!-- Add LinkedIn Link & LinkedIn Logo-->
-            <a href="#" target="_blank">GitHub</a> <!-- Add GitHub Link and GitHub Logo-->
-            <a href="#" target="_blank">ProductVerse</a> <!-- Add ProductVerse Link & ProductVerse Logo-->
+            <a href="#" target="_blank">LinkedIn</a>
+            <a href="#" target="_blank">GitHub</a>
+            <a href="#" target="_blank">ProductVerse</a>
         </div>
     </footer>
     
-    <script>
-        var coll = document.getElementsByClassName("collapsible");
-        for (var i = 0; i < coll.length; i++) {
-            coll[i].addEventListener("click", function() {
-                this.classList.toggle("active");
-                var content = this.nextElementSibling;
-                if (content.style.display === "block") {
-                    content.style.display = "none";
-                } else {
-                    content.style.display = "block";
-                }
-            });
-        }
-    </script>
+    <script src="scripts.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

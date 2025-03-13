@@ -2,16 +2,21 @@
 timeline
     title Career
     section Intern
-        Industry 1.0 : Machinery, Water power, Steam <br>power
-        Industry 2.0 : Electricity, Internal combustion engine, Mass production
-        Industry 3.0 : Electronics, Computers, Automation
+        June 2015 - July 2015 : Created Regression Testing Framework for PDF Data Extraction Application
     section Software Engineer  -     July 2015 - February 2017
-        Industry 4.0 : Internet, Robotics, Internet of Things
-        Industry 5.0 : Artificial intelligence, Big data,3D printing
+        Date - Date : Placeholder for Tasks
+        Date - Date : Placeholder for Tasks
+        **Date-Date** - Innovation Award
+        Date - Date : Placeholder for Tasks
+        Mentorship & Recruiting
     section Software Engineer II  -     February 2017 - October 2020
-        Industry 4.0 : Internet, Robotics, Internet of Things
-        placeholder : placeholder
+        Date - Date : Placeholder for Tasks
+        Date - Date : Placeholder for Tasks
+        Date - Date : Placeholder for Tasks
+        Mentorship & Recruiting
     section Senior Technical Product Manager  -     October 2020 - Current
+        Date - Date : Placeholder for Tasks
+        **Date - Date** : Pinacle Award
         January 2023 - December 2023 : HELOC
         January 2024 - Current : Appraisal Modernization Project
 ```
