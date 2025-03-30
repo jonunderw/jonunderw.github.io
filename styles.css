@@ -18,7 +18,7 @@ body {
 .home-section img {
     width: 200px;
     height: 200px;
-    border-radius: 50%;
+    border-radius: 0px;
     margin-right: 20px;
 }
 .container { max-width: 800px; }
@@ -66,5 +66,14 @@ nav.navbar {
     background-color: #333;
 }
 .table-striped tbody tr:nth-of-type(even) {
+    background-color: #2a2a2a;
+}
+
+.timeline-container {
+    background-color: #1a1a1a;
+    border-radius: 10px;
+    padding: 20px;
+}
+.vis-timeline {
     background-color: #2a2a2a;
 }
