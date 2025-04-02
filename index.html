@@ -6,6 +6,12 @@
     <title>Jon Underwood</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="styles.css" rel="stylesheet">
+    <style>
+        .section-wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+    </style>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
@@ -18,21 +24,30 @@
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="#home">About</a></li>
                     <li class="nav-item"><a class="nav-link" href="#experiences">Experiences</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#interests">Interests</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#repositories">GitHub Repoistories</a></li>
                 </ul>
             </div>
         </div>
     </nav>
-
+    
     <!-- About Section -->
     <section id="home" class="home-section section-wrapper" style="margin-top: 80px;">
         <div class="container d-flex align-items-center">
             <img src="./your-image.jpeg" alt="">
-            <!-- @TODO Make sure image is scalable -->
+            <!-- @TODO Make image porportionate to section -->
+            <h1>About</h1>
             <div>
-                <h1>About</h1>
                 <p>Welcome to my personal portfolio site. Here you'll find a more in-depth view my backstory, experiences, and interests.</p>
-                <!--Where I'm from, my journey, my personal life (wife, dog), currently dallas but soon Nashville, -->
+                <p>Hi, I’m Jon Underwood —a Mississippi native, technologist by trade, and lifelong explorer by nature.</p>
+                <p>I grew up in Fulton, MS—a small town about 20 miles east of Tupelo (yes, home of Elvis and Rae Sremmurd)</p>
+                <p>After high school, I attended the University of Mississippi (Ole Miss) where I earned a degree in Computer Science.</p> 
+                <p>After graduation, I started my career as a Software Engineer at FNC in Oxford, eventually transitioning to CoreLogic (now <a href="https://www.cotality.com/">Cotality</a>) after an acquisition.</p>
+                <p>In 2018, I made the move to Dallas with my bestfriend, Lola, a Border Collie/Aussie Shepherd mix, and then in 2020, I met my now wife. We just got married in September of 2024, and now we’re planning the next chapter of growing our family, in Nashville.</p>
+                <p>Professionally, I’m driven by systems thinking, hardcore engineering, & orchestrating breakthrough. I love building meaningful products and solutions that sit at the intersection of business strategy, engineering, and human behavior. </p> 
+                <p>I’m currently working on <a href="https://productverse.space">ProductVerse</a>—a space to explore ideas across Product Management, Engineering, and Operational excellence, where I blend insight & research with a touch of philosophy.</p>
+                <p>When I’m not knee-deep in <a href="https://productverse.space">ProductVerse</a> development or tinkering with coding & new tech, you’ll likely find me (or not find me), recharging outdoors, enjoying remote camping, running, hiking, kayaking, biking, fishing, golfing - you name it, or fueling my curiosity with music and podcasts.</p> 
+                <p>I’m also a strong advocate for wellness, sustainability, and giving back through community and international outreach.</p>
+                <p>I’m here to build, learn, and leave things better than I found them.</p>
             </div>
         </div>
     </section>
@@ -41,77 +56,59 @@
     <section id="experiences" class="py-5 text-center section-wrapper">
         <div id="experiences" class="container">
             <h2>Experiences</h2>
+            <!-- @TODO - Add Vertical Timeline w/ experience, accomplishments, philanthropy & volunteering-->
             <div class="timeline-container">
                 <div id="career-timeline"></div>
             </div>
-            <!-- <div class="container align-items-center">
-                <img src="./career-timeline.png" label="Career Timeline" alt="Career Timeline" class="img-fluid">
-            </div> -->
-            <div class="content">
-                <p>Details about the role, accomplishments, and milestones.</p>
-            </div>
+            
         </div>
     </section>
     
-    <!-- Interests Section -->
-    <section id="interests" class="py-5 text-center section-wrapper">
+    <!-- Repositories Section -->
+    <section id="repositories" class="py-5 text-center section-wrapper">
         <div class="container">
-
-            <h2>Interests</h2>
-            <p>I've got a lot of interests, probably too many, but below are the areas where I spend the majority of my available free time.</p>
-            
             <!-- GitHub Repositories -->            
-            <h4>GitHub Repositories</h4>
+
+            <h2>GitHub Repositories</h2>
             <table class="table table-dark table-striped mb-5">
                 <thead>
                     <tr>
-                        <th>Interest</th>
                         <th>Repository</th>
+                        <th>Description</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td><a href="https://github.com/jonunderw/pm-tooling">PM Toolkit</a></td>
-                        <td>Resources for Product Managers and Dev Teams</td>
-                    </tr>
-                    <tr>
-                        <td><a href="https://github.com/jonunderw/spatial">Maps & 3D Modeling</a></td>
-                        <td>Custom Maps, Geolocational Visualizations & 3D Modeling</td> 
-                    </tr>
-                    <tr>
                         <td><a href="https://github.com/jonunderw/data-sbx">Data SBX</a></td>
                         <td>Data Playground - Analysis & Visualizations</td>
                     </tr> 
-                    <tr>
+                    <!-- <tr>
+                        <td><a href="https://github.com/jonunderw/pm-tooling">PM Toolkit</a></td>
+                        <td>Resources for Product Managers and Dev Teams</td>
+                    </tr> -->
+                    <!-- <tr>
                         <td><a href="https://github.com/jonunderw/homestead-tooling">Homesteading</a></td>
                         <td>Gardening/Farming, Preserving, & Recipes Research and Planning Tools</td>
-                    </tr>
+                    </tr> -->
                 </tbody>
             </table>
 
-            <!-- MIRO Board(s) -->
-            
-            <!-- ProductVerse -->            
-            <h4>ProductVerse</h4>
-            <p>ProductVerse is a community of Product Managers and Data Scientists. We share resources, tools, and insights to help each other grow and succeed in our careers.</p>
-            <p>We are currently working on a project to create a comprehensive toolkit for Product Managers and Data Scientists. This includes templates, frameworks, and best practices for product development.</p>
-            <p>We also have a Slack community where members can connect, share ideas, and collaborate on projects.</p>
-            <p>Join us on <a href="https://productverse.space">ProductVerse</a> to learn more and get involved!</p>
-
-
-            <h4>Research</h4>
-            <p>I'm currently researching the intersection of Product Management, Data Science, and AI. I believe that understanding data and its implications is crucial for effective product management.</p>
-            <p>I'm also interested in the impact of AI on product management and how it can be leveraged to improve processes and outcomes.</p>
+            <!-- @TODO - MIRO Board(s) -->
             
         </div>
     </section>
     
-    <footer class="footer">
+    <footer class="footer section-wrapper">
         <div class="container">
+            <!--@TODO - Add legit links-->
             <p>Connect with me:</p>
             <a href="#" target="_blank">LinkedIn</a>
             <a href="#" target="_blank">GitHub</a>
             <a href="#" target="_blank">ProductVerse</a>
+            <a href="#" target="_blank">Email</a>
+            <!--@TODO - Add downloadable resume-->
+            <a href="#" target="_blank">Download Resume</a>
+            <p>&copy; 2024 Jon Underwood. All rights reserved.</p>
         </div>
     </footer>
     
