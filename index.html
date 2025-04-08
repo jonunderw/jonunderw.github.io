@@ -16,7 +16,10 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="#home">Jon Underwood</a>
+            <a class="navbar-brand d-flex align-items-center" href="#home">
+                <img src="./assets/logo.png" alt="Logo" class="me-2" style="height: 40px;">
+                Jon Underwood
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -24,38 +27,66 @@
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="#home">About</a></li>
                     <li class="nav-item"><a class="nav-link" href="#experiences">Experiences</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#repositories">GitHub Repoistories</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#repositories">GitHub Repositories</a></li>
                 </ul>
             </div>
         </div>
     </nav>
     
+    <!-- Carousel Section -->
+    <section id="carousel" class="carousel-section section-wrapper">
+        <div id="mainCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="./your-image.jpeg" class="d-block w-100" alt="Carousel Image 1">
+                </div>
+                <div class="carousel-item">
+                    <img src="./your-image.jpeg" class="d-block w-100" alt="Carousel Image 2">
+                </div>
+                <div class="carousel-item">
+                    <img src="./your-image.jpeg" class="d-block w-100" alt="Carousel Image 3">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#mainCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#mainCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </section>
+
     <!-- About Section -->
     <section id="home" class="home-section section-wrapper" style="margin-top: 80px;">
-        <div class="container d-flex align-items-center">
-            <img src="./your-image.jpeg" alt="">
-            <!-- @TODO Make image porportionate to section -->
-            <h1>About</h1>
-            <div>
-                <p>Welcome to my personal portfolio site. Here you'll find a more in-depth view my backstory, experiences, and interests.</p>
-                <p>Hi, I’m Jon Underwood —a Mississippi native, technologist by trade, and lifelong explorer by nature.</p>
-                <p>I grew up in Fulton, MS—a small town about 20 miles east of Tupelo (yes, home of Elvis and Rae Sremmurd)</p>
-                <p>After high school, I attended the University of Mississippi (Ole Miss) where I earned a degree in Computer Science.</p> 
-                <p>After graduation, I started my career as a Software Engineer at FNC in Oxford, eventually transitioning to CoreLogic (now <a href="https://www.cotality.com/">Cotality</a>) after an acquisition.</p>
-                <p>In 2018, I made the move to Dallas with my bestfriend, Lola, a Border Collie/Aussie Shepherd mix, and then in 2020, I met my now wife. We just got married in September of 2024, and now we’re planning the next chapter of growing our family, in Nashville.</p>
-                <p>Professionally, I’m driven by systems thinking, hardcore engineering, & orchestrating breakthrough. I love building meaningful products and solutions that sit at the intersection of business strategy, engineering, and human behavior. </p> 
-                <p>I’m currently working on <a href="https://productverse.space">ProductVerse</a>—a space to explore ideas across Product Management, Engineering, and Operational excellence, where I blend insight & research with a touch of philosophy.</p>
-                <p>When I’m not knee-deep in <a href="https://productverse.space">ProductVerse</a> development or tinkering with coding & new tech, you’ll likely find me (or not find me), recharging outdoors, enjoying remote camping, running, hiking, kayaking, biking, fishing, golfing - you name it, or fueling my curiosity with music and podcasts.</p> 
-                <p>I’m also a strong advocate for wellness, sustainability, and giving back through community and international outreach.</p>
-                <p>I’m here to build, learn, and leave things better than I found them.</p>
+        <div class="container">
+            <h2 class="text-center mb-4">About</h2>
+            <div class="row align-items-start">
+                <div class="col-md-6 d-flex flex-wrap align-items-center">
+                    <p>Hi, I’m Jon Underwood a Mississippi native, technologist by trade, and lifelong explorer by nature. 
+                        I grew up in Fulton, MS — a small town about 20 miles east of Tupelo (yes, home of Elvis and Rae Sremmurd). 
+                        After high school, I attended the University of Mississippi (Ole Miss) where I earned my Bachelors of Science in Computer Science</p>
+                    <p>After college, I worked briefly in Oxford, MS, but in 2018, I made the move to Dallas with my bestfriend, Lola, a Border Collie/Aussie Shepherd mix. 
+                        Then in 2020, I met my now wife (just got married in September of 2024), and now we’re planning the next chapter of growing our family, in Nashville, TN.</p>
+                </div>
+                <div class="col-md-6 d-flex flex-wrap align-items-center">
+                    <!--Move this to a new section-->                    
+                    <p>Professionally, I’m driven by systems thinking, hardcore engineering, & orchestrating breakthrough. I love building meaningful products and solutions that sit at the intersection of business strategy, engineering, and human behavior. </p> 
+                    <!--Move this to a new section-->
+                    <p>I’m currently working on <a href="https://productverse.space">ProductVerse</a>—a space to explore ideas across Product Management, Engineering, and Operational excellence, where I blend insight & research with a touch of philosophy.</p>
+                    <p>When I’m not knee-deep in <a href="https://productverse.space">ProductVerse</a> development or tinkering with coding & new tech, you’ll likely find me (or not find me), recharging outdoors, enjoying remote camping, running, hiking, kayaking, biking, fishing, golfing - you name it, or fueling my curiosity with music and podcasts.</p> 
+                    <p>I’m also a strong advocate for wellness, sustainability, and giving back through community and international outreach.</p>
+                    <p>I’m here to build, learn, and leave things better than I found them.</p>
+                </div>
             </div>
         </div>
     </section>
     
     <!-- Experiences Section -->
-    <section id="experiences" class="py-5 text-center section-wrapper">
-        <div id="experiences" class="container">
-            <h2>Experiences</h2>
+    <section id="experiences" class="py-5 section-wrapper">
+        <div class="container">
+            <h2 class="text-center mb-4">Experiences</h2>
             <!-- @TODO - Add Vertical Timeline w/ experience, accomplishments, philanthropy & volunteering-->
             <div class="timeline-container">
                 <div id="career-timeline"></div>
@@ -65,11 +96,11 @@
     </section>
     
     <!-- Repositories Section -->
-    <section id="repositories" class="py-5 text-center section-wrapper">
+    <section id="repositories" class="py-5 section-wrapper">
         <div class="container">
             <!-- GitHub Repositories -->            
 
-            <h2>GitHub Repositories</h2>
+            <h2 class="text-center mb-4">GitHub Repositories</h2>
             <table class="table table-dark table-striped mb-5">
                 <thead>
                     <tr>
