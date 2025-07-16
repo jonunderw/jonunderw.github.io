@@ -9,7 +9,7 @@
     "lint": "eslint .",
     "preview": "vite preview"
   },
-  "homepage": "https://jonunderw.github.io", 
+  "homepage": "https://jonunderw.github.io",
   "dependencies": {
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
