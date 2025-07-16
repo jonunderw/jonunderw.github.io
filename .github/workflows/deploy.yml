@@ -1,0 +1,39 @@
+# .github/workflows/deploy.yml
+
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main # Or 'master' - the branch you want to deploy from
+  workflow_dispatch: # Allows you to manually trigger the workflow from GitHub Actions tab
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest # Use the latest Ubuntu runner
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4 # Checkout your repository code
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20' # Specify your Node.js version (e.g., 18, 20, 22)
+          cache: 'npm' # Cache npm dependencies
+
+      - name: Install dependencies
+        run: npm install # Install your project's npm dependencies
+
+      - name: Build project
+        run: npm run build # Run your build script (which should be 'tsc && vite build')
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4 # Use the popular gh-pages action
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }} # GitHub's built-in token for authentication
+          publish_dir: ./dist # The directory containing your built files
+          # Optional: Specify a custom branch if not 'gh-pages'
+          # publish_branch: gh-pages
+          # Optional: Message for the deployment commit
+          # commit_message: 'Deploying with GitHub Actions'

@@ -17,7 +17,20 @@ const posts: BlogPost[] = [
     // Add more posts here
 ];
 
-const BlogPage = () => <div className="p-4"><h1>My Blog</h1></div>;
-
+const BlogPage: React.FC = () => (
+    <main style={{ maxWidth: 700, margin: "0 auto", padding: "2rem" }}>
+        <h1>Blog</h1>
+        <ul style={{ listStyle: "none", padding: 0 }}>
+            {posts.map((post) => (
+                <li key={post.slug} style={{ marginBottom: "2rem" }}>
+                    <h2>
+                    </h2>
+                    <small>{post.date}</small>
+                    <p>{post.excerpt}</p>
+                </li>
+            ))}
+        </ul>
+    </main>
+);
 
 export default BlogPage;
