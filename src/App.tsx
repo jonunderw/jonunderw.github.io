@@ -4,8 +4,8 @@ import viteLogo from '/vite.svg';
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
-import BlogPage from './pages/blog';
-import AboutPage from './pages/about';
+import BlogPage from './pages/Blog';
+import AboutPage from './pages/About';
 import ProjectsPage from './pages/Projects';
 
 function App() {
