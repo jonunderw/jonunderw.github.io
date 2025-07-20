@@ -19,7 +19,7 @@ const hobbies = ['Photography', 'Hiking', 'Reading', 'Traveling'];
 const interests = ['Web Development', 'Open Source', 'AI', 'Music'];
 
 const AboutPage: React.FC = () => (
-    <div style={{ maxWidth: 800, margin: '0 auto', padding: '2rem' }}>
+    <div style={{ maxWidth: 800, margin: '0 auto', padding: '2rem', paddingTop: '6rem' }}>
         <h1>About Me</h1>
         <div style={{ display: 'flex', alignItems: 'center', marginBottom: '2rem' }}>
             <img

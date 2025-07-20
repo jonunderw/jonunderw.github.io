@@ -25,7 +25,7 @@ const ProjectsPage: React.FC = () => {
     }, []);
 
     return (
-        <div style={{ maxWidth: 800, margin: "0 auto", padding: "2rem" }}>
+        <div style={{ maxWidth: 800, margin: "0 auto", padding: "2rem", paddingTop: "6rem" }}>
             <h1>My GitHub Projects</h1>
             {loading ? (
                 <p>Loading projects...</p>

@@ -18,7 +18,7 @@ const posts: BlogPost[] = [
 ];
 
 const BlogPage: React.FC = () => (
-    <main style={{ maxWidth: 700, margin: "0 auto", padding: "2rem" }}>
+    <main style={{ maxWidth: 700, margin: "0 auto", padding: "2rem", paddingTop: "6rem" }}>
         <h1>Blog</h1>
         <ul style={{ listStyle: "none", padding: 0 }}>
             {posts.map((post) => (
