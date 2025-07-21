@@ -2,7 +2,7 @@ import { BlogPost } from '../types/BlogPost';
 
 export const posts: BlogPost[] = [
   {
-    "title": "Welcome to My Blog",
+    "title": "Example Blog",
     "date": "2024-06-01",
     "excerpt": "This is the first post on my new blog. Stay tuned for more updates and exciting content!",
     "category": "General",

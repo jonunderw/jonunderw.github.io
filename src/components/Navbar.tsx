@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom'; // Assuming you're using React Router DOM
+import { Link } from 'react-router-dom';
 
 const Navbar: React.FC = () => {
   return (
@@ -8,9 +8,8 @@ const Navbar: React.FC = () => {
         {/* Logo - Far Left */}
         <div className="flex items-center flex-shrink-0 text-white mr-6">
           <Link to="/" className="flex items-center">
-            {/* Replace with your actual logo image */}
             <img
-              src="https://via.placeholder.com/40" // Placeholder logo, replace with your image path
+              src="https://via.placeholder.com/40"
               alt="Logo"
               className="h-10 w-10 rounded-full mr-2"
             />
@@ -19,21 +18,21 @@ const Navbar: React.FC = () => {
 
         {/* Navigation Links */}
         <div className="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
-          <div className="text-sm lg:flex-grow lg:flex lg:justify-end"> {/* Pushes links to the right */}
+          <div className="text-sm lg:flex-grow lg:flex lg:justify-end">
             <Link
-              to="/Blogs"
+              to="/blogs"
               className="block mt-4 lg:inline-block lg:mt-0 text-gray-300 hover:text-white mr-4"
             >
               Blogs
             </Link>
             <Link
-              to="/About"
+              to="/about"
               className="block mt-4 lg:inline-block lg:mt-0 text-gray-300 hover:text-white mr-4"
             >
               About
             </Link>
             <Link
-              to="/Projects"
+              to="/projects"
               className="block mt-4 lg:inline-block lg:mt-0 text-gray-300 hover:text-white"
             >
               Projects
