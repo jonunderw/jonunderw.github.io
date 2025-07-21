@@ -1,7 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const Navbar: React.FC = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+  };
+
   return (
     <nav className="bg-gray-800 p-4 fixed top-0 left-0 right-0 z-50">
       <div className="container mx-auto flex items-center justify-between flex-wrap">
@@ -16,24 +26,40 @@ const Navbar: React.FC = () => {
           </Link>
         </div>
 
+        {/* Mobile menu button */}
+        <div className="block lg:hidden">
+          <button
+            onClick={toggleMenu}
+            className="flex items-center px-3 py-2 border rounded text-gray-200 border-gray-400 hover:text-white hover:border-white transition-colors"
+          >
+            <svg className="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+              <title>Menu</title>
+              <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/>
+            </svg>
+          </button>
+        </div>
+
         {/* Navigation Links */}
-        <div className="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
+        <div className={`w-full block flex-grow lg:flex lg:items-center lg:w-auto ${isMenuOpen ? 'block' : 'hidden'}`}>
           <div className="text-sm lg:flex-grow lg:flex lg:justify-end">
             <Link
               to="/blogs"
-              className="block mt-4 lg:inline-block lg:mt-0 text-gray-300 hover:text-white mr-4"
+              className="block mt-4 lg:inline-block lg:mt-0 text-gray-300 hover:text-white mr-0 lg:mr-4 mb-2 lg:mb-0 px-4 py-2 lg:px-0 lg:py-0 rounded lg:rounded-none hover:bg-gray-700 lg:hover:bg-transparent transition-colors"
+              onClick={closeMenu}
             >
               Blogs
             </Link>
             <Link
               to="/about"
-              className="block mt-4 lg:inline-block lg:mt-0 text-gray-300 hover:text-white mr-4"
+              className="block mt-4 lg:inline-block lg:mt-0 text-gray-300 hover:text-white mr-0 lg:mr-4 mb-2 lg:mb-0 px-4 py-2 lg:px-0 lg:py-0 rounded lg:rounded-none hover:bg-gray-700 lg:hover:bg-transparent transition-colors"
+              onClick={closeMenu}
             >
               About
             </Link>
             <Link
               to="/projects"
-              className="block mt-4 lg:inline-block lg:mt-0 text-gray-300 hover:text-white"
+              className="block mt-4 lg:inline-block lg:mt-0 text-gray-300 hover:text-white mr-0 px-4 py-2 lg:px-0 lg:py-0 rounded lg:rounded-none hover:bg-gray-700 lg:hover:bg-transparent transition-colors"
+              onClick={closeMenu}
             >
               Projects
             </Link>
