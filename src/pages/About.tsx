@@ -2,31 +2,38 @@ import React from 'react';
 
 const jobExperiences = [
     {
-        company: 'Tech Solutions Inc.',
-        role: 'Senior Frontend Developer',
-        period: '2021 - Present',
-        description: 'Leading development of modern web applications using React, TypeScript, and cloud technologies. Mentoring junior developers and implementing best practices.',
+        company: 'Cotality',
+        role: 'Senior Technical Product Manager',
+        period: 'March 2021 - Present',
+        description: 'Currently leading Appraisal Modernization project, creating new products for Data Validation, File Storage, & Valuation Review, for key industry shift to Data Driven Appraisals. Additionally, developed internal product suite for converting to event-driven architecture & developed a product suite for orchestrating order fulfillement.',
+        year: '2025'
+    },
+    {
+        company: 'CoreLogic',
+        role: 'Software Engineer II',
+        period: 'April 2016 - March 2021',
+        description: 'Served as a Lead Engineer for major Cloud Migration to GCP, delivered key features for Appraisal platforms, supported Vendor API integrations, & Lead Engineer on new Title and Closing Solution.',
         year: '2021'
     },
     {
-        company: 'Web Innovations',
-        role: 'UI/UX Designer & Developer',
-        period: '2019 - 2021',
-        description: 'Designed and developed user interfaces for various clients, improving user experience and conversion rates by 30%.',
-        year: '2019'
+        company: 'FNC Inc.',
+        role: 'Software Engineer I',
+        period: 'July 2015 - April 2016',
+        description: 'Integrated the primary customer facing platform with Stripe\’s Web API, Migrated PDF Data Extraction application to a Web API based application, & introduced CI/CD practices to the team.',
+        year: '2016'
     },
     {
-        company: 'Freelance',
-        role: 'Web Developer',
-        period: '2017 - 2019',
-        description: 'Built custom websites and web applications for small businesses, focusing on responsive design and performance optimization.',
-        year: '2017'
+        company: 'FNC Inc.',
+        role: 'Software Engineering Intern',
+        period: 'May 2015 - June 2015',
+        description: 'Developed internal tools and regression testing framework for PDF Data Extraction service.',
+        year: '2015'
     },
     {
-        company: 'University',
-        role: 'Computer Science Student',
-        period: '2015 - 2019',
-        description: 'Studied Computer Science with focus on software engineering and web technologies. Graduated with honors.',
+        company: 'University of Mississippi',
+        role: 'B.S in Computer Science',
+        period: '2013 - 2015',
+        description: 'Studied Computer Science with focus on software engineering and web technologies. Served as a teaching assistant for introductory programming courses & Treasurer for University\'s chapter of the ACM',
         year: '2015'
     }
 ];
@@ -132,20 +139,24 @@ const AboutPage: React.FC = () => (
                                     <div className="absolute inset-0 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl opacity-50"></div>
                                     <div className="relative p-8">
                                         <h2 className="text-3xl font-bold text-gray-900 mb-6">
-                                            Hello, I'm Jon Underwood
+                                            Here's a bit about myself
                                         </h2>
                                         <p className="text-xl leading-8 text-gray-700 mb-6">
-                                            A passionate full-stack developer with a love for building engaging web experiences. 
-                                            I enjoy learning new technologies and collaborating with others to create impactful solutions that make a difference.
+                                            Hey there—I’m a builder at heart. With over 10 years in software engineering and product management, I’ve made a career out of turning complex systems into simple, powerful solutions that actually get the job done. I love bringing products to life—from that first spark of an idea to seeing it thrive in the hands of real users.
                                         </p>
-                                        <p className="text-lg leading-7 text-gray-600 mb-6">
-                                            With over 5 years of experience in web development, I specialize in React, TypeScript, and modern web technologies. 
-                                            I'm passionate about creating user-friendly interfaces, writing clean code, and sharing knowledge with the developer community.
+                                        <p className="text-xl leading-8 text-gray-700 mb-6">
+                                            These days, as a Senior Technical Product Manager, I focus on building products that meet real-world needs—most recently leading Appraisal Modernization efforts by applying a strong architectural background, GenAI capabilities, and Lean Product principles to power the next generation of Products.
+                                            In parallel, I am also leading the development and future launch of a new Appraisal Review product that’s positioned to drive meaningful revenue and portfolio growth.
                                         </p>
-                                        <p className="text-lg leading-7 text-gray-600">
-                                            When I'm not coding, you can find me exploring new hiking trails, experimenting with photography, 
-                                            or diving into the latest tech trends and AI developments.
+                                        <p className="text-xl leading-8 text-gray-700 mb-6">
+                                            I'm always looking for ways to increase operational efficiency, optimize cloud infrastructure, and improve quality and delivery.
+                                            I’ve led cloud cost reductions, simplified vendor integrations, and designed pipelines that power next-gen analytics platforms—all while keeping external users and internal teams on the same page.
                                         </p>
+                                        <p className="text-xl leading-8 text-gray-700">
+                                            Outside of work, you’ll still find me building, exploring, and orchestrating—just in different forms. 
+                                            Whether that be working on a new woodworking project, hiking and kayaking, or playing music.
+                                        </p>
+
                                     </div>
                                 </div>
                             </div>
