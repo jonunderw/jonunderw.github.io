@@ -29,7 +29,7 @@ const ProjectsPage: React.FC = () => {
                 // Filter out forks and get the most interesting repos
                 const filteredRepos = data
                     .filter((repo: Repo) => !repo.name.includes('fork'))
-                    .slice(0, 8); // Get top 8 repos for our 4-row grid
+                    .slice(0, 8); // Get top 8 repos
                 setRepos(filteredRepos);
                 setLoading(false);
             })
@@ -88,15 +88,9 @@ const ProjectsPage: React.FC = () => {
         );
     }
 
-    // Group repos into pairs for each row
-    const repoRows = [];
-    for (let i = 0; i < repos.length; i += 2) {
-        repoRows.push(repos.slice(i, i + 2));
-    }
-
     return (
         <div className="min-h-screen bg-gray-50 pt-20">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
                 {/* Header */}
                 <div className="text-center mb-16">
                     <h1 className="text-4xl font-bold text-gray-900 mb-4">
@@ -107,131 +101,96 @@ const ProjectsPage: React.FC = () => {
                     </p>
                 </div>
 
-                {/* Bento Grid - 4 Rows */}
+                {/* Single Column Bento Grid */}
                 <div className="space-y-8">
-                    {repoRows.map((rowRepos, rowIndex) => (
-                        <div key={rowIndex} className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-                            {/* First project in row - spans 2 columns */}
-                            {rowRepos[0] && (
-                                <div className="lg:col-span-2 group relative overflow-hidden rounded-2xl bg-white p-8 shadow-sm hover:shadow-lg transition-all duration-300">
-                                    <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-indigo-100 opacity-50"></div>
-                                    <div className="relative">
-                                        <div className="flex items-start justify-between mb-4">
-                                            <div className="flex items-center space-x-3">
-                                                <div className="h-12 w-12 rounded-lg bg-indigo-600 flex items-center justify-center">
-                                                    <svg className="h-6 w-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
-                                                    </svg>
-                                                </div>
-                                                <div>
-                                                    <h3 className="text-xl font-bold text-gray-900 group-hover:text-indigo-600 transition-colors">
-                                                        {rowRepos[0].name}
-                                                    </h3>
-                                                    <p className="text-sm text-gray-500">Updated {formatDate(rowRepos[0].updated_at)}</p>
-                                                </div>
-                                            </div>
-                                            <a
-                                                href={rowRepos[0].html_url}
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                                className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 transition-colors"
-                                            >
-                                                View Project
-                                                <svg className="ml-2 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                                                </svg>
-                                            </a>
+                    {repos.map((repo, index) => (
+                        <div key={repo.id} className="group relative overflow-hidden rounded-3xl bg-white p-8 shadow-sm hover:shadow-lg transition-all duration-300">
+                            {/* Alternating gradient backgrounds */}
+                            <div className={`absolute inset-0 opacity-50 ${
+                                index % 4 === 0 ? 'bg-gradient-to-br from-blue-50 to-indigo-100' :
+                                index % 4 === 1 ? 'bg-gradient-to-br from-purple-50 to-pink-100' :
+                                index % 4 === 2 ? 'bg-gradient-to-br from-green-50 to-emerald-100' :
+                                'bg-gradient-to-br from-orange-50 to-yellow-100'
+                            }`}></div>
+                            
+                            <div className="relative">
+                                <div className="flex items-start justify-between mb-6">
+                                    <div className="flex items-center space-x-4">
+                                        <div className={`h-12 w-12 rounded-xl flex items-center justify-center ${
+                                            index % 4 === 0 ? 'bg-indigo-600' :
+                                            index % 4 === 1 ? 'bg-purple-600' :
+                                            index % 4 === 2 ? 'bg-green-600' :
+                                            'bg-orange-600'
+                                        }`}>
+                                            <svg className="h-6 w-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                                            </svg>
                                         </div>
-                                        
-                                        <p className="text-gray-600 mb-6 line-clamp-2">
-                                            {rowRepos[0].description || "No description available for this project."}
-                                        </p>
-                                        
-                                        <div className="flex items-center justify-between">
-                                            <div className="flex items-center space-x-4">
-                                                {rowRepos[0].language && (
-                                                    <span className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-medium text-white ${getLanguageColor(rowRepos[0].language)}`}>
-                                                        {rowRepos[0].language}
-                                                    </span>
-                                                )}
-                                                <div className="flex items-center space-x-4 text-sm text-gray-500">
-                                                    <span className="flex items-center">
-                                                        <svg className="h-4 w-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
-                                                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                                                        </svg>
-                                                        {rowRepos[0].stargazers_count}
-                                                    </span>
-                                                    <span className="flex items-center">
-                                                        <svg className="h-4 w-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
-                                                            <path fillRule="evenodd" d="M7.707 3.293a1 1 0 010 1.414L5.414 7H11a7 7 0 017 7v2a1 1 0 11-2 0v-2a5 5 0 00-5-5H5.414l2.293 2.293a1 1 0 11-1.414 1.414L2.586 7a2 2 0 010-2.828l3.707-3.707a1 1 0 011.414 0z" clipRule="evenodd" />
-                                                        </svg>
-                                                        {rowRepos[0].forks_count}
-                                                    </span>
-                                                </div>
-                                            </div>
+                                        <div>
+                                            <h3 className={`text-2xl font-bold text-gray-900 transition-colors ${
+                                                index % 4 === 0 ? 'group-hover:text-indigo-600' :
+                                                index % 4 === 1 ? 'group-hover:text-purple-600' :
+                                                index % 4 === 2 ? 'group-hover:text-green-600' :
+                                                'group-hover:text-orange-600'
+                                            }`}>
+                                                {repo.name}
+                                            </h3>
+                                            <p className="text-sm text-gray-500">Updated {formatDate(repo.updated_at)}</p>
+                                        </div>
+                                    </div>
+                                    <a
+                                        href={repo.html_url}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className={`inline-flex items-center px-6 py-3 border border-transparent text-sm font-medium rounded-lg text-white transition-colors ${
+                                            index % 4 === 0 ? 'bg-indigo-600 hover:bg-indigo-700' :
+                                            index % 4 === 1 ? 'bg-purple-600 hover:bg-purple-700' :
+                                            index % 4 === 2 ? 'bg-green-600 hover:bg-green-700' :
+                                            'bg-orange-600 hover:bg-orange-700'
+                                        }`}
+                                    >
+                                        View Project
+                                        <svg className="ml-2 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                                        </svg>
+                                    </a>
+                                </div>
+                                
+                                <p className="text-lg text-gray-600 mb-6 leading-relaxed">
+                                    {repo.description || "No description available for this project."}
+                                </p>
+                                
+                                <div className="flex items-center justify-between">
+                                    <div className="flex items-center space-x-6">
+                                        {repo.language && (
+                                            <span className={`inline-flex items-center px-3 py-1 rounded-full text-sm font-medium text-white ${getLanguageColor(repo.language)}`}>
+                                                {repo.language}
+                                            </span>
+                                        )}
+                                        <div className="flex items-center space-x-6 text-sm text-gray-500">
+                                            <span className="flex items-center">
+                                                <svg className="h-5 w-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                                </svg>
+                                                {repo.stargazers_count} stars
+                                            </span>
+                                            <span className="flex items-center">
+                                                <svg className="h-5 w-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                                    <path fillRule="evenodd" d="M7.707 3.293a1 1 0 010 1.414L5.414 7H11a7 7 0 017 7v2a1 1 0 11-2 0v-2a5 5 0 00-5-5H5.414l2.293 2.293a1 1 0 11-1.414 1.414L2.586 7a2 2 0 010-2.828l3.707-3.707a1 1 0 011.414 0z" clipRule="evenodd" />
+                                                </svg>
+                                                {repo.forks_count} forks
+                                            </span>
                                         </div>
                                     </div>
                                 </div>
-                            )}
-
-                            {/* Second project in row - spans 1 column */}
-                            {rowRepos[1] && (
-                                <div className="lg:col-span-1 group relative overflow-hidden rounded-2xl bg-white p-6 shadow-sm hover:shadow-lg transition-all duration-300">
-                                    <div className="absolute inset-0 bg-gradient-to-br from-gray-50 to-gray-100 opacity-50"></div>
-                                    <div className="relative">
-                                        <div className="flex items-center mb-4">
-                                            <div className="h-10 w-10 rounded-lg bg-gray-600 flex items-center justify-center mr-3">
-                                                <svg className="h-5 w-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
-                                                </svg>
-                                            </div>
-                                            <div className="flex-1 min-w-0">
-                                                <h3 className="text-lg font-bold text-gray-900 group-hover:text-gray-700 transition-colors truncate">
-                                                    {rowRepos[1].name}
-                                                </h3>
-                                                <p className="text-xs text-gray-500">Updated {formatDate(rowRepos[1].updated_at)}</p>
-                                            </div>
-                                        </div>
-                                        
-                                        <p className="text-gray-600 text-sm mb-4 line-clamp-3">
-                                            {rowRepos[1].description || "No description available."}
-                                        </p>
-                                        
-                                        <div className="space-y-3">
-                                            {rowRepos[1].language && (
-                                                <span className={`inline-flex items-center px-2 py-1 rounded text-xs font-medium text-white ${getLanguageColor(rowRepos[1].language)}`}>
-                                                    {rowRepos[1].language}
-                                                </span>
-                                            )}
-                                            
-                                            <div className="flex items-center justify-between">
-                                                <div className="flex items-center space-x-3 text-xs text-gray-500">
-                                                    <span>⭐ {rowRepos[1].stargazers_count}</span>
-                                                    <span>🔄 {rowRepos[1].forks_count}</span>
-                                                </div>
-                                                <a
-                                                    href={rowRepos[1].html_url}
-                                                    target="_blank"
-                                                    rel="noopener noreferrer"
-                                                    className="inline-flex items-center text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors"
-                                                >
-                                                    View
-                                                    <svg className="ml-1 h-3 w-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                                                    </svg>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            )}
+                            </div>
                         </div>
                     ))}
                 </div>
 
                 {/* Call to Action */}
                 <div className="mt-16 text-center">
-                    <div className="bg-white rounded-2xl p-8 shadow-sm">
+                    <div className="bg-white rounded-3xl p-8 shadow-sm">
                         <h2 className="text-2xl font-bold text-gray-900 mb-4">
                             Want to see more?
                         </h2>
@@ -242,7 +201,7 @@ const ProjectsPage: React.FC = () => {
                             href={`https://github.com/${GITHUB_USERNAME}`}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-gray-900 hover:bg-gray-800 transition-colors"
+                            className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-lg text-white bg-gray-900 hover:bg-gray-800 transition-colors"
                         >
                             View GitHub Profile
                             <svg className="ml-2 h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
