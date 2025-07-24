@@ -3,9 +3,6 @@ import BlogCard from '../components/BlogCard';
 // import { BlogPost } from '../types/BlogPost';
 import { BlogMeta } from '../utils/mdx';
 
-// Import the generated index file that contains all post metadata
-import postsIndex from '../data/mdx/index.json';
-
 const BlogPage: React.FC = () => {
     const [posts, setPosts] = useState<BlogMeta[]>([]);
     const [loading, setLoading] = useState(true);
@@ -15,12 +12,11 @@ const BlogPage: React.FC = () => {
         const loadPosts = async () => {
             try {
                 setLoading(true);
-                // Import the generated index file
-                const response = await fetch('/src/data/mdx/index.json');
-                const postsData = await response.json() as BlogMeta[];
+                // Dynamically import the generated index file
+                const { default: postsData } = await import('../data/mdx/index.json');
                 
                 // Sort by date (newest first)
-                const sortedPosts = postsData.sort((a, b) => 
+                const sortedPosts = (postsData as BlogMeta[]).sort((a, b) => 
                     new Date(b.date).getTime() - new Date(a.date).getTime()
                 );
                 setPosts(sortedPosts);
@@ -35,6 +31,7 @@ const BlogPage: React.FC = () => {
         loadPosts();
     }, []);
 
+    // ... rest of your component
     if (loading) {
         return (
             <div className="min-h-screen bg-gray-50 pt-20">

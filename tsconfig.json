@@ -18,8 +18,13 @@
     "jsx": "react-jsx"
   },
   "include": ["src"],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "src/data/mdx/**/*"  // Exclude generated MDX files
+  ],
   "references": [
     { "path": "./tsconfig.node.json" }
-  ],
+  ]
 
 }
