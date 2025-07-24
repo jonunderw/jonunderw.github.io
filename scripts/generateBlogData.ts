@@ -1,6 +1,6 @@
 import fs from "fs";
 import path from "path";
-import { getAllPosts } from "../src/utils/mdx";
+import { getAllPosts } from "../src/utils/mdx.js";
 
 (async () => {
   const outDir = path.join(process.cwd(), "src/data/mdx");
@@ -8,22 +8,20 @@ import { getAllPosts } from "../src/utils/mdx";
 
   const posts = await getAllPosts();
 
+  // Generate individual post data as JSON
   posts.forEach((post) => {
-    const filepath = path.join(outDir, `${post.meta.slug}.tsx`);
-    const fileContent = `
-/** @jsxImportSource react */
-import { mdx } from '@mdx-js/react'
-
-${post.code}
-
-export const meta = ${JSON.stringify(post.meta)};
-export default MDXContent;
-`;
-
-    fs.writeFileSync(filepath, fileContent);
+    const filepath = path.join(outDir, `${post.meta.slug}.json`);
+    const postData = {
+      meta: post.meta,
+      content: post.code // This will be the compiled MDX
+    };
+    
+    fs.writeFileSync(filepath, JSON.stringify(postData, null, 2));
   });
 
-  // Optionally generate a list of post metadata
+  // Generate index of post metadata
   const indexData = posts.map((p) => p.meta);
   fs.writeFileSync(path.join(outDir, `index.json`), JSON.stringify(indexData, null, 2));
+
+  console.log(`Generated ${posts.length} blog posts`);
 })();

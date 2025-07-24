@@ -11,13 +11,16 @@ const BlogPage: React.FC = () => {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
 
-    useEffect(() => {
+     useEffect(() => {
         const loadPosts = async () => {
             try {
                 setLoading(true);
-                // The posts metadata is already available from the generated index.json
+                // Import the generated index file
+                const response = await fetch('/src/data/mdx/index.json');
+                const postsData = await response.json() as BlogMeta[];
+                
                 // Sort by date (newest first)
-                const sortedPosts = (postsIndex as BlogMeta[]).sort((a, b) => 
+                const sortedPosts = postsData.sort((a, b) => 
                     new Date(b.date).getTime() - new Date(a.date).getTime()
                 );
                 setPosts(sortedPosts);
