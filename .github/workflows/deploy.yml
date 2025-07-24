@@ -37,6 +37,9 @@ jobs:
       - name: Install dependencies
         run: npm ci # Use npm ci instead of npm install for CI environments
 
+      - name: Generate MDX posts
+        run: npm run generate:posts
+
       - name: Build project
         run: npm run build # Run your build script (which should be 'tsc && vite build')
 

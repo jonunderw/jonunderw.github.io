@@ -1,8 +1,8 @@
 import React from 'react';
-import { BlogPost } from '../types/BlogPost';
+import { BlogMeta } from '../utils/mdx';
 
 interface BlogCardProps {
-    post: BlogPost;
+    post: BlogMeta;
 }
 
 const BlogCard: React.FC<BlogCardProps> = ({ post }) => (

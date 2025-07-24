@@ -1,28 +1,35 @@
 import React, { useState, useEffect } from "react";
 import BlogCard from '../components/BlogCard';
-import { BlogPost } from '../types/BlogPost';
-import { loadAllBlogPosts } from '../utils/blogUtils';
+// import { BlogPost } from '../types/BlogPost';
+import { BlogMeta } from '../utils/mdx';
+
+// Import the generated index file that contains all post metadata
+import postsIndex from '../data/mdx/index.json';
 
 const BlogPage: React.FC = () => {
-    const [posts, setPosts] = useState<BlogPost[]>([]);
+    const [posts, setPosts] = useState<BlogMeta[]>([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
 
     useEffect(() => {
-        const fetchPosts = async () => {
+        const loadPosts = async () => {
             try {
                 setLoading(true);
-                const loadedPosts = await loadAllBlogPosts();
-                setPosts(loadedPosts);
+                // The posts metadata is already available from the generated index.json
+                // Sort by date (newest first)
+                const sortedPosts = (postsIndex as BlogMeta[]).sort((a, b) => 
+                    new Date(b.date).getTime() - new Date(a.date).getTime()
+                );
+                setPosts(sortedPosts);
             } catch (err) {
                 setError('Failed to load blog posts');
-                console.error('Error fetching posts:', err);
+                console.error('Error loading posts:', err);
             } finally {
                 setLoading(false);
             }
         };
 
-        fetchPosts();
+        loadPosts();
     }, []);
 
     if (loading) {
