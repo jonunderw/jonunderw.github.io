@@ -1,19 +1,18 @@
 import React, { useState, useEffect } from "react";
 import BlogCard from '../components/BlogCard';
-// import { BlogPost } from '../types/BlogPost';
-import { BlogMeta } from '../utils/mdx';
+import { BlogMeta } from '../types/BlogMeta';
 
 const BlogPage: React.FC = () => {
     const [posts, setPosts] = useState<BlogMeta[]>([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
 
-     useEffect(() => {
+    useEffect(() => {
         const loadPosts = async () => {
             try {
                 setLoading(true);
-                // Dynamically import the generated index file
-                const { default: postsData } = await import('../data/mdx/index.json');
+                // Import the generated index file
+                const { default: postsData } = await import('../data/blogs/index.json');
                 
                 // Sort by date (newest first)
                 const sortedPosts = (postsData as BlogMeta[]).sort((a, b) => 
@@ -31,7 +30,6 @@ const BlogPage: React.FC = () => {
         loadPosts();
     }, []);
 
-    // ... rest of your component
     if (loading) {
         return (
             <div className="min-h-screen bg-gray-50 pt-20">
@@ -80,15 +78,6 @@ const BlogPage: React.FC = () => {
                 ) : (
                     <div className="text-center py-12">
                         <p className="text-gray-600">No blog posts available yet.</p>
-                    </div>
-                )}
-                
-                {/* Load More Button (Optional) */}
-                {posts.length > 0 && (
-                    <div className="text-center mt-12">
-                        <button className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 transition-colors">
-                            Load More Posts
-                        </button>
                     </div>
                 )}
             </div>

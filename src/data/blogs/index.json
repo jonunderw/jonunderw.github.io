@@ -1,6 +1,4 @@
-import { BlogPost } from '../types/BlogPost';
-
-export const posts: BlogPost[] = [
+[
   {
     "title": "Example Blog",
     "date": "2024-06-01",
@@ -8,7 +6,11 @@ export const posts: BlogPost[] = [
     "category": "General",
     "readTime": "3 min read",
     "imageUrl": "https://via.placeholder.com/400x250",
-    "slug": "/blog/example-blog",
-    "published": true
+    "published": true,
+    "tags": [
+      "react",
+      "mdx"
+    ],
+    "slug": "example-blog"
   }
-];
+]

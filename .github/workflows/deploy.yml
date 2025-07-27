@@ -3,45 +3,68 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - main # Or 'master' - the branch you want to deploy from
-  workflow_dispatch: # Allows you to manually trigger the workflow from GitHub Actions tab
+      - main
+  workflow_dispatch:
 
-# Add permissions for the GITHUB_TOKEN
 permissions:
   contents: read
   pages: write
   id-token: write
 
-# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
 concurrency:
   group: "pages"
   cancel-in-progress: false
 
 jobs:
   build-and-deploy:
-    runs-on: ubuntu-latest # Use the latest Ubuntu runner
+    runs-on: ubuntu-latest
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
 
     steps:
       - name: Checkout Code
-        uses: actions/checkout@v4 # Checkout your repository code
+        uses: actions/checkout@v4
 
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20' # Specify your Node.js version (e.g., 18, 20, 22)
-          cache: 'npm' # Cache npm dependencies
+          node-version: '20'
+          cache: 'npm'
 
       - name: Install dependencies
-        run: npm ci # Use npm ci instead of npm install for CI environments
+        run: npm ci
 
-      - name: Generate MDX posts
-        run: npm run generate-blogs
+      - name: Verify blog content exists
+        run: |
+          if [ ! -d "content/blogs" ]; then
+            echo "❌ content/blogs directory not found"
+            exit 1
+          fi
+          echo "✅ Blog content directory found"
+          ls -la content/blogs/
+
+      - name: Generate blog data
+        run: |
+          echo "🔄 Generating blog data..."
+          npm run generate-blogs
+          echo "✅ Blog data generated"
+          ls -la src/data/blogs/ || echo "No blogs directory created"
 
       - name: Build project
-        run: npm run build # Run your build script (which should be 'tsc && vite build')
+        run: |
+          echo "🔄 Building project..."
+          npm run build
+          echo "✅ Build completed"
+
+      - name: Verify build output
+        run: |
+          if [ ! -d "dist" ]; then
+            echo "❌ dist directory not found after build"
+            exit 1
+          fi
+          echo "✅ Build output verified"
+          ls -la dist/
 
       - name: Setup Pages
         uses: actions/configure-pages@v4

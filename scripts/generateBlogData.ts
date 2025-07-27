@@ -1,9 +1,9 @@
 import fs from "fs";
 import path from "path";
-import { getAllPosts } from "../src/utils/mdx.js";
+import { getAllPosts, calculateReadTime } from "../src/utils/markdown.js";
 
 (async () => {
-  const outDir = path.join(process.cwd(), "src/data/mdx");
+  const outDir = path.join(process.cwd(), "src/data/blogs");
   
   // Clean the output directory first
   if (fs.existsSync(outDir)) {
@@ -13,12 +13,18 @@ import { getAllPosts } from "../src/utils/mdx.js";
 
   const posts = await getAllPosts();
 
-  // Generate individual post data as JSON only
+  // Generate individual post data as JSON
   posts.forEach((post) => {
+    // Add read time if not already present
+    if (!post.meta.readTime) {
+      post.meta.readTime = calculateReadTime(post.content);
+    }
+
     const filepath = path.join(outDir, `${post.meta.slug}.json`);
     const postData = {
       meta: post.meta,
-      content: post.code // This will be the compiled MDX
+      html: post.html, // Processed HTML content
+      content: post.content // Raw markdown content
     };
     
     fs.writeFileSync(filepath, JSON.stringify(postData, null, 2));
