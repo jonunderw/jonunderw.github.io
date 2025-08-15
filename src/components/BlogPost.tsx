@@ -34,11 +34,11 @@ const BlogPost: React.FC = () => {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-gray-50 pt-20">
+      <div className="min-h-screen bg-gradient-to-br from-[#0a0f1c] via-[#10172a] to-[#1e293b] pt-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <div className="text-center">
-            <div className="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
-            <p className="mt-4 text-gray-600">Loading blog post...</p>
+            <div className="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-cyan-400"></div>
+            <p className="mt-4 text-cyan-200">Loading blog post...</p>
           </div>
         </div>
       </div>
@@ -47,14 +47,14 @@ const BlogPost: React.FC = () => {
 
   if (error || !post) {
     return (
-      <div className="min-h-screen bg-gray-50 pt-20">
+      <div className="min-h-screen bg-gradient-to-br from-[#0a0f1c] via-[#10172a] to-[#1e293b] pt-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <div className="text-center">
-            <h1 className="text-2xl font-bold text-gray-900 mb-4">Post Not Found</h1>
-            <p className="text-gray-600 mb-6">{error || 'The blog post you\'re looking for doesn\'t exist.'}</p>
+            <h1 className="text-2xl font-bold text-white mb-4">Post Not Found</h1>
+            <p className="text-cyan-200 mb-6">{error || "The blog post you're looking for doesn't exist."}</p>
             <Link
               to="/blogs"
-              className="inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 transition-colors"
+              className="inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md text-white bg-cyan-600 hover:bg-cyan-700 transition-colors"
             >
               ← Back to Blog
             </Link>
@@ -67,13 +67,13 @@ const BlogPost: React.FC = () => {
   const { meta, html } = post;
 
   return (
-    <div className="min-h-screen bg-gray-50 pt-20">
-      <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div className="min-h-screen bg-gradient-to-br from-[#0a0f1c] via-[#10172a] to-[#1e293b] pt-20">
+      <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 bg-gradient-to-br from-[#1e293b] to-[#0a0f1c] rounded-3xl shadow-xl border border-cyan-900/40">
         {/* Back to Blog Link */}
         <div className="mb-8">
           <Link
             to="/blogs"
-            className="inline-flex items-center text-blue-600 hover:text-blue-800 transition-colors"
+            className="inline-flex items-center text-cyan-400 hover:text-cyan-200 transition-colors"
           >
             <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
@@ -91,23 +91,23 @@ const BlogPost: React.FC = () => {
               className="w-full h-64 sm:h-80 object-cover rounded-2xl shadow-lg mb-8"
             />
           )}
-          
+
           <div className="space-y-4">
             {meta.category && (
-              <span className="inline-block px-3 py-1 text-sm font-medium text-blue-600 bg-blue-100 rounded-full">
+              <span className="inline-block px-3 py-1 text-sm font-medium text-cyan-300 bg-cyan-900/40 border border-cyan-700 rounded-full">
                 {meta.category}
               </span>
             )}
-            
-            <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 leading-tight">
+
+            <h1 className="text-4xl sm:text-5xl font-bold text-white leading-tight">
               {meta.title}
             </h1>
-            
-            <p className="text-xl text-gray-600 leading-relaxed">
+
+            <p className="text-xl text-cyan-200 leading-relaxed">
               {meta.excerpt}
             </p>
-            
-            <div className="flex flex-wrap items-center gap-4 text-sm text-gray-500">
+
+            <div className="flex flex-wrap items-center gap-4 text-sm text-cyan-400">
               <time dateTime={meta.date}>
                 {new Date(meta.date).toLocaleDateString('en-US', {
                   year: 'numeric',
@@ -115,7 +115,7 @@ const BlogPost: React.FC = () => {
                   day: 'numeric'
                 })}
               </time>
-              
+
               {meta.readTime && (
                 <>
                   <span>•</span>
@@ -123,13 +123,13 @@ const BlogPost: React.FC = () => {
                 </>
               )}
             </div>
-            
+
             {meta.tags && meta.tags.length > 0 && (
               <div className="flex flex-wrap gap-2 pt-2">
                 {meta.tags.map((tag) => (
                   <span
                     key={tag}
-                    className="px-3 py-1 text-xs font-medium text-gray-600 bg-gray-200 rounded-full hover:bg-gray-300 transition-colors"
+                    className="px-3 py-1 text-xs font-medium text-cyan-200 bg-cyan-900/40 border border-cyan-700 rounded-full hover:bg-cyan-800 transition-colors"
                   >
                     #{tag}
                   </span>
@@ -140,26 +140,22 @@ const BlogPost: React.FC = () => {
         </header>
 
         {/* Content */}
-        <div className="prose prose-lg prose-slate max-w-none prose-headings:text-gray-900 prose-p:text-gray-700 prose-a:text-blue-600 prose-a:no-underline hover:prose-a:text-blue-800 prose-blockquote:border-l-blue-500 prose-blockquote:bg-gray-50 prose-code:bg-gray-100 prose-code:text-red-600 prose-pre:bg-gray-900">
-          <div className="bg-white rounded-2xl shadow-sm p-8 sm:p-12">
-            <div 
-              className="markdown-content"
-              dangerouslySetInnerHTML={{ __html: html }}
-            />
-          </div>
-        </div>
+        <div
+          className="prose prose-lg prose-invert max-w-none prose-headings:text-white prose-p:text-white prose-li:text-white prose-strong:text-white prose-em:text-white prose-a:text-white prose-a:no-underline hover:prose-a:text-cyan-200 prose-blockquote:border-l-cyan-500 prose-blockquote:bg-cyan-900/20 prose-code:bg-[#10172a] prose-code:text-white prose-pre:bg-[#10172a]"
+          dangerouslySetInnerHTML={{ __html: html }}
+        />
 
         {/* Footer */}
-        <footer className="mt-12 pt-8 border-t border-gray-200">
+        <footer className="mt-12 pt-8 border-t border-cyan-900/40">
           <div className="flex justify-between items-center">
             <Link
               to="/blogs"
-              className="inline-flex items-center px-4 py-2 border border-gray-300 text-base font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 transition-colors"
+              className="inline-flex items-center px-4 py-2 border border-cyan-900/40 text-base font-medium rounded-md text-cyan-200 bg-[#10172a] hover:bg-cyan-900 hover:text-white transition-colors"
             >
               ← All Posts
             </Link>
-            
-            <div className="text-sm text-gray-500">
+
+            <div className="text-sm text-cyan-400">
               Published on {new Date(meta.date).toLocaleDateString()}
             </div>
           </div>

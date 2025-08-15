@@ -65,11 +65,11 @@ const ProjectsPage: React.FC = () => {
 
     if (loading) {
         return (
-            <div className="min-h-screen bg-gray-50 pt-20">
+            <div className="min-h-screen bg-gradient-to-br from-[#0a0f1c] via-[#10172a] to-[#1e293b] pt-20">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
                     <div className="text-center">
-                        <div className="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
-                        <p className="mt-4 text-gray-600">Loading projects...</p>
+                        <div className="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-cyan-400"></div>
+                        <p className="mt-4 text-cyan-200">Loading projects...</p>
                     </div>
                 </div>
             </div>
@@ -78,10 +78,10 @@ const ProjectsPage: React.FC = () => {
 
     if (error) {
         return (
-            <div className="min-h-screen bg-gray-50 pt-20">
+            <div className="min-h-screen bg-gradient-to-br from-[#0a0f1c] via-[#10172a] to-[#1e293b] pt-20">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
                     <div className="text-center">
-                        <p className="text-red-600">Error loading projects: {error}</p>
+                        <p className="text-red-400">Error loading projects: {error}</p>
                     </div>
                 </div>
             </div>
@@ -89,14 +89,14 @@ const ProjectsPage: React.FC = () => {
     }
 
     return (
-        <div className="min-h-screen bg-gray-50 pt-20">
+        <div className="min-h-screen bg-gradient-to-br from-[#0a0f1c] via-[#10172a] to-[#1e293b] pt-20">
             <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
                 {/* Header */}
                 <div className="text-center mb-16">
-                    <h1 className="text-4xl font-bold text-gray-900 mb-4">
+                    <h1 className="text-4xl font-bold text-white mb-4 drop-shadow-lg">
                         My Projects
                     </h1>
-                    <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+                    <p className="text-xl text-cyan-200 max-w-2xl mx-auto">
                         A collection of my recent work and open source contributions from GitHub.
                     </p>
                 </div>
@@ -104,50 +104,31 @@ const ProjectsPage: React.FC = () => {
                 {/* Single Column Bento Grid */}
                 <div className="space-y-8">
                     {repos.map((repo, index) => (
-                        <div key={repo.id} className="group relative overflow-hidden rounded-3xl bg-white p-8 shadow-sm hover:shadow-lg transition-all duration-300">
-                            {/* Alternating gradient backgrounds */}
-                            <div className={`absolute inset-0 opacity-50 ${
-                                index % 4 === 0 ? 'bg-gradient-to-br from-blue-50 to-indigo-100' :
-                                index % 4 === 1 ? 'bg-gradient-to-br from-purple-50 to-pink-100' :
-                                index % 4 === 2 ? 'bg-gradient-to-br from-green-50 to-emerald-100' :
-                                'bg-gradient-to-br from-orange-50 to-yellow-100'
-                            }`}></div>
-                            
+                        <div
+                            key={repo.id}
+                            className="group relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#1e293b] to-[#0a0f1c] p-8 shadow-xl border border-cyan-900/40 hover:border-cyan-400 transition-all duration-300"
+                        >
+                            <div className="absolute inset-0 bg-gradient-to-br from-cyan-900/30 to-indigo-900/30 opacity-60"></div>
                             <div className="relative">
                                 <div className="flex items-start justify-between mb-6">
                                     <div className="flex items-center space-x-4">
-                                        <div className={`h-12 w-12 rounded-xl flex items-center justify-center ${
-                                            index % 4 === 0 ? 'bg-indigo-600' :
-                                            index % 4 === 1 ? 'bg-purple-600' :
-                                            index % 4 === 2 ? 'bg-green-600' :
-                                            'bg-orange-600'
-                                        }`}>
+                                        <div className="h-12 w-12 rounded-xl flex items-center justify-center bg-cyan-600">
                                             <svg className="h-6 w-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
                                             </svg>
                                         </div>
                                         <div>
-                                            <h3 className={`text-2xl font-bold text-gray-900 transition-colors ${
-                                                index % 4 === 0 ? 'group-hover:text-indigo-600' :
-                                                index % 4 === 1 ? 'group-hover:text-purple-600' :
-                                                index % 4 === 2 ? 'group-hover:text-green-600' :
-                                                'group-hover:text-orange-600'
-                                            }`}>
+                                            <h3 className="text-2xl font-bold text-white group-hover:text-cyan-400 transition-colors">
                                                 {repo.name}
                                             </h3>
-                                            <p className="text-sm text-gray-500">Updated {formatDate(repo.updated_at)}</p>
+                                            <p className="text-sm text-cyan-400">Updated {formatDate(repo.updated_at)}</p>
                                         </div>
                                     </div>
                                     <a
                                         href={repo.html_url}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className={`inline-flex items-center px-6 py-3 border border-transparent text-sm font-medium rounded-lg text-white transition-colors ${
-                                            index % 4 === 0 ? 'bg-indigo-600 hover:bg-indigo-700' :
-                                            index % 4 === 1 ? 'bg-purple-600 hover:bg-purple-700' :
-                                            index % 4 === 2 ? 'bg-green-600 hover:bg-green-700' :
-                                            'bg-orange-600 hover:bg-orange-700'
-                                        }`}
+                                        className="inline-flex items-center px-6 py-3 border border-transparent text-sm font-medium rounded-lg text-white bg-cyan-600 hover:bg-cyan-700 transition-colors"
                                     >
                                         View Project
                                         <svg className="ml-2 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -156,7 +137,7 @@ const ProjectsPage: React.FC = () => {
                                     </a>
                                 </div>
                                 
-                                <p className="text-lg text-gray-600 mb-6 leading-relaxed">
+                                <p className="text-lg text-cyan-200 mb-6 leading-relaxed">
                                     {repo.description || "No description available for this project."}
                                 </p>
                                 
@@ -167,7 +148,7 @@ const ProjectsPage: React.FC = () => {
                                                 {repo.language}
                                             </span>
                                         )}
-                                        <div className="flex items-center space-x-6 text-sm text-gray-500">
+                                        <div className="flex items-center space-x-6 text-sm text-cyan-400">
                                             <span className="flex items-center">
                                                 <svg className="h-5 w-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
                                                     <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
@@ -190,18 +171,18 @@ const ProjectsPage: React.FC = () => {
 
                 {/* Call to Action */}
                 <div className="mt-16 text-center">
-                    <div className="bg-white rounded-3xl p-8 shadow-sm">
-                        <h2 className="text-2xl font-bold text-gray-900 mb-4">
+                    <div className="bg-gradient-to-br from-[#1e293b] to-[#0a0f1c] rounded-3xl p-8 shadow-xl border border-cyan-900/40">
+                        <h2 className="text-2xl font-bold text-white mb-4">
                             Want to see more?
                         </h2>
-                        <p className="text-gray-600 mb-6">
+                        <p className="text-cyan-200 mb-6">
                             Check out my complete portfolio of projects and contributions on GitHub.
                         </p>
                         <a
                             href={`https://github.com/${GITHUB_USERNAME}`}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-lg text-white bg-gray-900 hover:bg-gray-800 transition-colors"
+                            className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-lg text-white bg-cyan-600 hover:bg-cyan-700 transition-colors"
                         >
                             View GitHub Profile
                             <svg className="ml-2 h-5 w-5" fill="currentColor" viewBox="0 0 20 20">

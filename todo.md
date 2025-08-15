@@ -1,7 +1,12 @@
 ### Backlog before launch
+- Update About Me (remove specific things related to AppMod and add things around mortgage industry and finTech in 2nd paragraph. In 3rd paragraph, make it sound not so boring.)
+- Update the home page initial banner to something different than Building & Orchestrating 
+- Update the logo to be more abstract - like a "%" from a terminal but with a hammer and nail instead of the circles 
+- Update thumbnail for tab text
+- Update blog post text to be not pure white.  
+- Finish blog(s) 
+    - AI for PMs, AI tooling wholistic overview
+    - Metrics 
+    - Why PMs should understand DevOps
+    - Metrics   
 - Update pages with images and non mock content
-- Update thumbnail for tab
-- Incorporate build time markdown to static content generator.
-    -- plan to use mdx package for this
-    -- need to setup additional pre-build steps to rename .md to .mdx (additionally, to copy files from Obsidian folder to site folder.)
-    
