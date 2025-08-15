@@ -1,5 +1,4 @@
 ### Backlog before launch
-- Update About Me (remove specific things related to AppMod and add things around mortgage industry and finTech in 2nd paragraph. In 3rd paragraph, make it sound not so boring.)
 - Update the home page initial banner to something different than Building & Orchestrating 
 - Update the logo to be more abstract - like a "%" from a terminal but with a hammer and nail instead of the circles 
 - Update thumbnail for tab text
@@ -9,4 +8,9 @@
     - Metrics 
     - Why PMs should understand DevOps
     - Metrics   
+    - Event Driven Architecture from perspective of a PM
+    - Future:
+        -- n8n 
+        -- Notebook LLM
 - Update pages with images and non mock content
+- Add google analytics to see what blogs are being read the most

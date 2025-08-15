@@ -3,6 +3,111 @@ import { jobExperiences } from '../data/jobExperiences';
 import { personalTimeline } from '../data/personalTimeline';
 import { socialHandles } from '../data/socialHandles';
 
+const skills = [
+  {
+    group: "Product Management",
+    color: "bg-cyan-700",
+    border: "border-cyan-900/40",
+    items: ["Jira", "Pendo", "Aha!", "Figma", "Confluence", "Canva"],
+  },
+  {
+    group: "AI Tooling",
+    color: "bg-green-700",
+    border: "border-green-900/40",
+    items: [
+      "OpenAI",
+      "GitHub Co-Pilot",
+      "Claude",
+      "Grok",
+      "NotebookLLM",
+      "n8n",
+      "& adding more daily",
+    ],
+  },
+  {
+    group: "Vibe Coding",
+    color: "bg-indigo-700",
+    border: "border-indigo-900/40",
+    items: [
+      "JavaScript",
+      "ReactJS",
+      "TailwindCSS",
+      "SQL",
+      "Python",
+      "C#",
+    ],
+  },
+  {
+    group: "Cloud & DevOps",
+    color: "bg-blue-700",
+    border: "border-blue-900/40",
+    items: [
+      "GCP",
+      "Terraform",
+      "Kubernetes",
+      "Ansible",
+      "Artifactory",
+      "Apigee",
+      "Kafka",
+      "Docker",
+      "Jenkins",
+      "GitHub Actions",
+    ],
+  },
+  {
+    group: "Analytics & Visualization",
+    color: "bg-purple-700",
+    border: "border-purple-900/40",
+    items: ["Looker", "ELK", "Excel", "Jupyter Notebook"],
+  },
+  {
+    group: "Testing",
+    color: "bg-pink-700",
+    border: "border-pink-900/40",
+    items: [
+      "Postman",
+      "Swagger",
+      "Sauce Labs",
+      "Appium",
+      "TestFlight",
+      "Veracode",
+      "SonarCube",
+    ],
+  },
+  {
+    group: "Architecture & Diagrams",
+    color: "bg-yellow-700",
+    border: "border-yellow-900/40",
+    items: ["Markdown with Mermaid", "Draw.io"],
+  },
+];
+const hobbies = [
+  {
+    group: "Outdoors & Adventure",
+    color: "bg-green-700",
+    border: "border-green-900/40",
+    items: ["Hiking", "Kayaking", "Running", "Fishing", "Traveling"],
+  },
+  {
+    group: "Creative & Hands-On",
+    color: "bg-yellow-700",
+    border: "border-yellow-900/40",
+    items: ["Woodworking", "Music", "Cooking", "Photography", "Writing"],
+  },
+  {
+    group: "Giving Back",
+    color: "bg-pink-700",
+    border: "border-pink-900/40",
+    items: ["Volunteering", "Philanthropy", "Mentoring"],
+  },
+  {
+    group: "Lifestyle & Exploration",
+    color: "bg-cyan-700",
+    border: "border-cyan-900/40",
+    items: ["Local exploration", "New experiences"],
+  },
+];
+
 const AboutPage: React.FC = () => (
   <div className="min-h-screen bg-gradient-to-br from-[#0a0f1c] via-[#10172a] to-[#1e293b] pt-20">
     <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
@@ -32,19 +137,13 @@ const AboutPage: React.FC = () => (
                 <div className="relative p-8">
                   <h2 className="text-3xl font-bold text-white mb-6">Here's a bit about myself</h2>
                   <p className="text-xl leading-8 text-cyan-200 mb-6">
-                    Hey there—I'm a builder at heart. With over 10 years in software engineering and product management, I've made a career out of turning complex systems into simple, powerful solutions that actually get the job done. I love bringing products to life—from that first spark of an idea to seeing it thrive in the hands of real users.
+                    Hey there—I’m Jon Underwood.  I love turning ideas into reality. With over a decade in software engineering and product management, I’ve spent my career turning complex challenges into products that are practical, scalable, and genuinely valuable to the people who use them. I love seeing an idea grow from concept into something that makes a real impact in the market.
                   </p>
                   <p className="text-xl leading-8 text-cyan-200 mb-6">
-                    These days, as a Senior Technical Product Manager, I focus on building products that meet real-world needs—most recently leading Appraisal Modernization efforts by applying a strong architectural background, GenAI capabilities, and Lean Product principles to power the next generation of Products.
-                    In parallel, I am also leading the development and future launch of a new Appraisal Review product that's positioned to drive meaningful revenue and portfolio growth.
-                  </p>
-                  <p className="text-xl leading-8 text-cyan-200 mb-6">
-                    I'm always looking for ways to increase operational efficiency, optimize cloud infrastructure, and improve quality and delivery.
-                    I've led cloud cost reductions, simplified vendor integrations, and designed pipelines that power next-gen analytics platforms—all while keeping external users and internal teams on the same page.
+                    Today, as a Senior Technical Product Manager, I bring a builder's mindset to the Financial Technology industry—especially within mortgage and property valuation space. My work blends product strategy with a strong technical foundation, helping bridge the gap between what’s possible and what truly solves a customer’s problem. I’ve led initiatives that streamline operations, improve customer experience, and deliver measurable business results—always with an eye toward simplicity, usability, and long-term sustainability.
                   </p>
                   <p className="text-xl leading-8 text-cyan-200">
-                    Outside of work, you'll still find me building, exploring, and orchestrating—just in different forms.
-                    Whether that be working on a new woodworking project, hiking and kayaking, or playing music.
+                    Outside of work, I stay busy with plenty of hobbies—you might find me in the workshop on a new woodworking project, out on the water kayaking, hiking a trail, strumming a guitar, or simply relaxing on a patio with my wife and our dog.
                   </p>
                 </div>
               </div>
@@ -52,9 +151,9 @@ const AboutPage: React.FC = () => (
           </div>
         </div>
 
-        {/* Row 2: Skills & Interests */}
+        {/* Row 2: Enhanced Skills & Interests */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          {/* Skills & Technologies */}
+          {/* Enhanced Skills Section */}
           <div className="overflow-hidden rounded-3xl bg-gradient-to-br from-[#232946] to-[#10172a] shadow-lg border border-indigo-900/40 relative">
             <div className="absolute inset-0 bg-gradient-to-br from-indigo-900/30 to-purple-900/30 opacity-60"></div>
             <div className="relative p-8">
@@ -64,42 +163,66 @@ const AboutPage: React.FC = () => (
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
                   </svg>
                 </div>
-                <h2 className="text-2xl font-bold text-white">Skills & Technologies</h2>
+                <h2 className="text-2xl font-bold text-white">Skills & Tooling</h2>
               </div>
-              <div className="grid grid-cols-2 gap-4">
-                {['React', 'TypeScript', 'Node.js', 'Python', 'AWS', 'Docker', 'GraphQL', 'MongoDB', 'PostgreSQL'].map((skill) => (
-                  <div key={skill} className="flex items-center p-3 bg-[#232946] rounded-lg shadow-sm border border-indigo-900/40">
-                    <div className="h-2 w-2 bg-indigo-400 rounded-full mr-3"></div>
-                    <span className="text-cyan-100 font-medium">{skill}</span>
+              <div className="space-y-6">
+                {skills.map((skillGroup) => (
+                  <div key={skillGroup.group}>
+                    <div className="flex items-center mb-2">
+                      <span className={`inline-block w-3 h-3 rounded-full mr-2 ${skillGroup.color}`}></span>
+                      <span className="text-lg font-semibold text-white">{skillGroup.group}</span>
+                    </div>
+                    <div className="flex flex-wrap gap-2">
+                      {skillGroup.items.map((item) => (
+                        <span
+                          key={item}
+                          className={`px-3 py-1 text-xs font-medium text-white ${skillGroup.color} ${skillGroup.border} rounded-full shadow-sm`}
+                        >
+                          {item}
+                        </span>
+                      ))}
+                    </div>
                   </div>
                 ))}
               </div>
             </div>
           </div>
 
-          {/* Interests & Hobbies */}
-          <div className="overflow-hidden rounded-3xl bg-gradient-to-br from-[#132e2e] to-[#10172a] shadow-lg border border-green-900/40 relative">
-            <div className="absolute inset-0 bg-gradient-to-br from-green-900/30 to-emerald-900/30 opacity-60"></div>
-            <div className="relative p-8">
-              <div className="flex items-center mb-6">
-                <div className="h-12 w-12 rounded-lg bg-green-600 flex items-center justify-center mr-4">
-                  <svg className="h-6 w-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-                  </svg>
-                </div>
-                <h2 className="text-2xl font-bold text-white">Interests & Hobbies</h2>
+           {/* Enhanced Hobbies Section */}
+        <div className="overflow-hidden rounded-3xl bg-gradient-to-br from-[#132e2e] to-[#10172a] shadow-lg border border-green-900/40 relative">
+          <div className="absolute inset-0 bg-gradient-to-br from-green-900/30 to-emerald-900/30 opacity-60"></div>
+          <div className="relative p-8">
+            <div className="flex items-center mb-6">
+              <div className="h-12 w-12 rounded-lg bg-green-600 flex items-center justify-center mr-4">
+                <svg className="h-6 w-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                </svg>
               </div>
-              <div className="grid grid-cols-1 gap-4">
-                {['Photography', 'Hiking', 'Reading', 'Traveling', 'Open Source', 'AI & Machine Learning', 'Music Production', 'Gaming'].map((interest) => (
-                  <div key={interest} className="flex items-center p-3 bg-[#132e2e] rounded-lg shadow-sm border border-green-900/40">
-                    <div className="h-2 w-2 bg-green-400 rounded-full mr-3"></div>
-                    <span className="text-cyan-100 font-medium">{interest}</span>
+              <h2 className="text-2xl font-bold text-white">Hobbies & Interests</h2>
+            </div>
+            <div className="space-y-6">
+              {hobbies.map((hobbyGroup) => (
+                <div key={hobbyGroup.group}>
+                  <div className="flex items-center mb-2">
+                    <span className={`inline-block w-3 h-3 rounded-full mr-2 ${hobbyGroup.color}`}></span>
+                    <span className="text-lg font-semibold text-white">{hobbyGroup.group}</span>
                   </div>
-                ))}
-              </div>
+                  <div className="flex flex-wrap gap-2">
+                    {hobbyGroup.items.map((item) => (
+                      <span
+                        key={item}
+                        className={`px-3 py-1 text-xs font-medium text-white ${hobbyGroup.color} ${hobbyGroup.border} rounded-full shadow-sm`}
+                      >
+                        {item}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </div>
+      </div>
 
         {/* Row 3: Career Timeline & Personal Timeline */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">

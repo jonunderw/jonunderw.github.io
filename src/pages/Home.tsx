@@ -8,43 +8,48 @@ const HomePage: React.FC = () => {
       <div className="relative">
         {/* Glassy/gradient overlay */}
         <div className="absolute inset-x-0 top-0 h-96 bg-gradient-to-br from-blue-900/80 via-indigo-900/80 to-cyan-900/80 blur-2xl"></div>
-        
+
         {/* Content */}
-        <div className="relative pt-32 pb-32 sm:pt-40 sm:pb-40">
+        <div className="relative pt-32 pb-32 sm:pt-40 sm:pb-40 bg-gradient-to-br from-[#10172a] via-[#0a0f1c] to-[#1e293b]">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="text-center">
-              <h1 className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl md:text-6xl drop-shadow-lg">
-                <span className="block mb-2">Building & Orchestrating</span>
-                <span className="block text-cyan-400">Products, Solutions, & Relationships</span>
-              </h1>
-            
-              <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:justify-center sm:gap-6">
-                <Link
-                  to="/blogs"
-                  className="inline-flex items-center justify-center rounded-md border border-transparent bg-cyan-600 px-8 py-3 text-base font-semibold text-white hover:bg-cyan-500 focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:ring-offset-2 transition-colors shadow-lg"
-                >
-                  Read the Blog
-                </Link>
-                <Link
-                  to="/about"
-                  className="inline-flex items-center justify-center rounded-md border border-cyan-700 bg-[#10172a] px-8 py-3 text-base font-semibold text-cyan-300 hover:bg-cyan-900 hover:text-white focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:ring-offset-2 transition-colors shadow-lg"
-                >
-                  About Me
-                </Link>
-                <a
-                  href="mailto:jon@example.com"
-                  className="inline-flex items-center justify-center rounded-md border border-cyan-400 bg-transparent px-8 py-3 text-base font-semibold text-cyan-400 hover:bg-cyan-400 hover:text-[#10172a] focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:ring-offset-2 transition-colors shadow-lg"
-                >
-                  Get in Touch
-                </a>
+            <div className="flex flex-col items-center justify-center gap-12">
+              {/* Centered Code-style Text Content */}
+              <div className="w-full text-center">
+                <pre className="bg-[#10172a]/80 border border-cyan-900/40 rounded-2xl px-8 py-8 text-white text-lg sm:text-2xl md:text-3xl font-mono leading-snug shadow-xl whitespace-pre-line mx-auto max-w-2xl select-none">
+                  if(<span className="text-cyan-400">idea.isPossible()</span> <span className="text-cyan-400">&amp;&amp;</span> <span className="text-cyan-400">idea.isValuable()</span>)
+                  &#123;
+                  <span className="text-cyan-400"> buildIt(); </span>
+                  &#125;
+                </pre>
+                <div className="mt-10 flex flex-col sm:flex-row sm:gap-6 gap-4 items-center justify-center">
+                  <Link
+                    to="/blogs"
+                    className="inline-flex items-center justify-center rounded-md border border-cyan-700 bg-[#10172a] px-8 py-3 text-base font-semibold text-cyan-300 hover:bg-cyan-900 hover:text-white focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:ring-offset-2 transition-colors shadow-lg"
+                  >
+                    Read the Blog
+                  </Link>
+                  <Link
+                    to="/about"
+                    className="inline-flex items-center justify-center rounded-md border border-cyan-700 bg-[#10172a] px-8 py-3 text-base font-semibold text-cyan-300 hover:bg-cyan-900 hover:text-white focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:ring-offset-2 transition-colors shadow-lg"
+                  >
+                    About Me
+                  </Link>
+                  <a
+                    href="mailto:jon@example.com"
+                    className="inline-flex items-center justify-center rounded-md border border-cyan-400 bg-transparent px-8 py-3 text-base font-semibold text-cyan-400 hover:bg-cyan-400 hover:text-[#10172a] focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:ring-offset-2 transition-colors shadow-lg"
+                  >
+                    Get in Touch
+                  </a>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
 
+
       {/* Featured Content/Topics - Bento Grid */}
-      <div className="relative -mt-16">
+      < div className="relative -mt-16" >
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mb-12 text-center">
             <h2 className="text-3xl font-bold text-white mb-4">Featured Topics</h2>
@@ -69,7 +74,7 @@ const HomePage: React.FC = () => {
                     </h3>
                   </div>
                   <p className="text-cyan-200 mb-4 leading-relaxed">
-                    Deep dives into product management, strategy, roadmapping, and the art of building products that users love. 
+                    Deep dives into product management, strategy, roadmapping, and the art of building products that users love.
                     From ideation to launch and beyond.
                   </p>
                   <div className="flex items-center text-cyan-400 font-medium group-hover:text-cyan-300">
@@ -97,7 +102,7 @@ const HomePage: React.FC = () => {
                     </h3>
                   </div>
                   <p className="text-purple-200 mb-4 leading-relaxed">
-                    System design, cloud architecture, and engineering best practices. 
+                    System design, cloud architecture, and engineering best practices.
                     Building scalable, maintainable solutions.
                   </p>
                   <div className="flex items-center text-purple-400 font-medium group-hover:text-purple-300">
@@ -138,10 +143,10 @@ const HomePage: React.FC = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div >
 
       {/* About Preview Section - Bento Grid */}
-      <div className="bg-gradient-to-br from-[#10172a] to-[#0a0f1c] py-16">
+      < div className="bg-gradient-to-br from-[#10172a] to-[#0a0f1c] py-16" >
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             {/* About Content - Spans 2 columns */}
@@ -153,12 +158,12 @@ const HomePage: React.FC = () => {
                     A bit about me
                   </h2>
                   <p className="text-lg text-cyan-200 mb-6 leading-relaxed">
-                    Hey there—I'm a builder at heart. With over 10 years in software engineering and product management, 
+                    Hey there—I'm a builder at heart. With over 10 years in software engineering and product management,
                     I've made a career out of turning complex systems into simple, powerful solutions that actually get the job done.
                   </p>
                   <p className="text-lg text-cyan-200 mb-8 leading-relaxed">
-                    These days, as a Senior Technical Product Manager, I focus on building products that meet real-world needs—most recently 
-                    leading Appraisal Modernization efforts by applying a strong architectural background, GenAI capabilities, 
+                    These days, as a Senior Technical Product Manager, I focus on building products that meet real-world needs—most recently
+                    leading Appraisal Modernization efforts by applying a strong architectural background, GenAI capabilities,
                     and Lean Product principles.
                   </p>
                   <Link
@@ -183,7 +188,7 @@ const HomePage: React.FC = () => {
                   <div className="text-sm text-cyan-200">Years Experience</div>
                 </div>
               </div>
-              
+
               <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#1e293b] to-[#0a0f1c] p-6 shadow-xl border border-purple-900/40">
                 <div className="absolute inset-0 bg-gradient-to-br from-purple-900/30 to-pink-900/30 opacity-60"></div>
                 <div className="relative text-center">
@@ -202,8 +207,8 @@ const HomePage: React.FC = () => {
             </div>
           </div>
         </div>
-      </div>
-    </div>
+      </div >
+    </div >
   );
 };
 
