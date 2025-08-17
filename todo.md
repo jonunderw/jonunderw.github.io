@@ -1,6 +1,7 @@
 ### Backlog before launch
-- Update the home page initial banner to something different than Building & Orchestrating 
-- Update the logo to be more abstract - like a "%" from a terminal but with a hammer and nail instead of the circles 
+- Convert notebookllm.mpa to .mp3
+- Update Blogpost styling to have multi columns fixed with headers
+- Update Blogpost styling to have Headers Left aligned and fix spacing between sections
 - Update thumbnail for tab text
 - Update blog post text to be not pure white.  
 - Finish blog(s) 

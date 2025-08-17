@@ -8,6 +8,9 @@ const BlogPost: React.FC = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
+  // Audio URL based on slug
+  const audioUrl = slug ? `/audio/${slug}.mp3` : null;
+
   useEffect(() => {
     const loadPost = async () => {
       if (!slug) {
@@ -138,6 +141,23 @@ const BlogPost: React.FC = () => {
             )}
           </div>
         </header>
+
+        {/* Audio Player & Download */}
+        {audioUrl && (
+          <div className="my-8 flex flex-col sm:flex-row items-center gap-4">
+            <audio controls className="w-full max-w-md">
+              <source src={audioUrl} type="audio/mpeg" />
+              Your browser does not support the audio element.
+            </audio>
+            <a
+              href={audioUrl}
+              download
+              className="inline-block px-4 py-2 bg-cyan-700 text-white rounded shadow hover:bg-cyan-600 transition"
+            >
+              Download Audio
+            </a>
+          </div>
+        )}
 
         {/* Content */}
         <div

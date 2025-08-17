@@ -1,9 +1,14 @@
 import { remark } from 'remark';
 import remarkParse from 'remark-parse';
-import remarkRehype from 'remark-rehype';
-import rehypeStringify from 'rehype-stringify';
 import remarkGfm from 'remark-gfm';
+import remarkDirective from 'remark-directive';
+import remarkRehype from 'remark-rehype';
+import rehypeRaw from 'rehype-raw';
+import rehypeStringify from 'rehype-stringify';
 import rehypeHighlight from 'rehype-highlight';
+import rehypeTableClass from './rehypeTableClass';
+import remarkColumns from './remarkColumns';
+
 import matter from 'gray-matter';
 import fs from 'fs';
 import path from 'path';
@@ -29,11 +34,16 @@ export interface ParsedMarkdown {
 }
 
 // Configure the remark processor
+// Configure the remark processor
 const processor = remark()
   .use(remarkParse)
-  .use(remarkGfm) // GitHub Flavored Markdown
+  .use(remarkGfm)
+  .use(remarkDirective)
+  .use(remarkColumns)
   .use(remarkRehype, { allowDangerousHtml: true })
-  .use(rehypeHighlight) // Syntax highlighting
+  .use(rehypeRaw) // allow raw HTML in markdown
+  .use(rehypeHighlight)
+  .use(rehypeTableClass)
   .use(rehypeStringify, { allowDangerousHtml: true });
 
 export function getAllPostSlugs(): string[] {

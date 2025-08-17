@@ -1,5 +1,19 @@
 [
   {
+    "title": "APIs - As a Product",
+    "date": "2025-08-17",
+    "excerpt": "APIs aren't labeled as a lot of things, but this post explores what APIs truly are - Products.",
+    "category": "General",
+    "readTime": "3 min read",
+    "imageUrl": "https://via.placeholder.com/400x250",
+    "published": true,
+    "tags": [
+      "APIs",
+      "Product Management"
+    ],
+    "slug": "api-blog"
+  },
+  {
     "title": "Example Blog",
     "date": "2024-06-01",
     "excerpt": "This is the first post on my new blog. Stay tuned for more updates and exciting content!",
