@@ -144,7 +144,10 @@ const BlogPost: React.FC = () => {
 
         {/* Audio Player & Download */}
         {audioUrl && (
-          <div className="my-8 flex flex-col sm:flex-row items-center gap-4">
+          <div className="my-8 flex flex-col items-center gap-4">
+            <p className="text-cyan-200 text-base text-center">
+              For a more in-depth version of this blog in podcast format, please listen or download the audio below.
+            </p>
             <audio controls className="w-full max-w-md">
               <source src={audioUrl} type="audio/mpeg" />
               Your browser does not support the audio element.
@@ -156,9 +159,12 @@ const BlogPost: React.FC = () => {
             >
               Download Audio
             </a>
+            <div className="text-xs text-cyan-400 mt-2 text-center">
+              Powered by <span className="font-semibold text-cyan-300">NotebookLLM</span>
+            </div>
           </div>
-        )}
-
+        )}  
+        
         {/* Content */}
         <div
           className="prose prose-lg prose-invert max-w-none prose-headings:text-white prose-p:text-white prose-li:text-white prose-strong:text-white prose-em:text-white prose-a:text-white prose-a:no-underline hover:prose-a:text-cyan-200 prose-blockquote:border-l-cyan-500 prose-blockquote:bg-cyan-900/20 prose-code:bg-[#10172a] prose-code:text-white prose-pre:bg-[#10172a]"
