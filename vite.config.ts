@@ -6,7 +6,7 @@ import tailwindcss from '@tailwindcss/vite';
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react(), tailwindcss()],
-  base: '/jonunderw.github.io/',
+  base: '/',
   assetsInclude: ['**/*.md'],
   define: {
     global: 'globalThis',
