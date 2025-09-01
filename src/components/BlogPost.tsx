@@ -87,25 +87,29 @@ const BlogPost: React.FC = () => {
 
         {/* Header */}
         <header className="mb-12">
-          {meta.imageUrl && (
-            <img
-              src={meta.imageUrl}
-              alt={meta.title}
-              className="w-full h-64 sm:h-80 object-cover rounded-2xl shadow-lg mb-8"
-            />
-          )}
-
           <div className="space-y-4">
-            {meta.category && (
-              <span className="inline-block px-3 py-1 text-sm font-medium text-cyan-300 bg-cyan-900/40 border border-cyan-700 rounded-full">
-                {meta.category}
-              </span>
-            )}
-
             <h1 className="text-4xl sm:text-5xl font-bold text-white leading-tight">
               {meta.title}
             </h1>
 
+
+
+          </div>
+
+          {meta.imageUrl && (
+            <img
+              src={meta.imageUrl}
+              alt={meta.title}
+              className="w-full aspect-[3/2] max-h-[32rem] object-cover rounded-2xl shadow-lg mb-8 mt-6"
+              style={{ maxHeight: '32rem' }}
+            />
+          )}
+          {/* {meta.category && (
+            <span className="inline-block px-3 py-1 text-sm font-medium text-cyan-300 bg-cyan-900/40 border border-cyan-700 rounded-full">
+              {meta.category}
+            </span>
+          )} */}
+          <div className="space-y-4">
             <p className="text-xl text-cyan-200 leading-relaxed">
               {meta.excerpt}
             </p>
@@ -163,8 +167,8 @@ const BlogPost: React.FC = () => {
               Powered by <span className="font-semibold text-cyan-300">NotebookLLM</span>
             </div>
           </div>
-        )}  
-        
+        )}
+
         {/* Content */}
         <div
           className="prose prose-lg prose-invert max-w-none prose-headings:text-white prose-p:text-white prose-li:text-white prose-strong:text-white prose-em:text-white prose-a:text-white prose-a:no-underline hover:prose-a:text-cyan-200 prose-blockquote:border-l-cyan-500 prose-blockquote:bg-cyan-900/20 prose-code:bg-[#10172a] prose-code:text-white prose-pre:bg-[#10172a]"

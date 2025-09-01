@@ -1,17 +1,17 @@
 [
   {
-    "title": "API - As a Product",
+    "title": "APIs - As Products",
     "date": "2025-08-17",
-    "excerpt": "APIs aren't labeled as a lot of things, but this post explores what APIs truly are - Products.",
+    "excerpt": "APIs are labeled as a lot of things, but this post explores what APIs truly are - Products.",
     "category": "General",
     "readTime": "3 min read",
-    "imageUrl": "https://via.placeholder.com/400x250",
+    "imageUrl": "/images/api-blog.png",
     "published": true,
     "tags": [
       "APIs",
       "Product Management"
     ],
-    "slug": "api-as-a-product"
+    "slug": "apis-as-products"
   },
   {
     "title": "Example Blog",

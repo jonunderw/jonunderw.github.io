@@ -127,7 +127,7 @@ const AboutPage: React.FC = () => (
                 <div className="flex justify-center lg:justify-start">
                   <img
                     className="aspect-[3/4] w-full max-w-sm rounded-2xl bg-gray-900 object-cover shadow-lg border border-cyan-900/40"
-                    src="https://via.placeholder.com/400x500"
+                    src="/images/headshot.jpeg"
                     alt="Jon Underwood"
                   />
                 </div>
