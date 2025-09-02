@@ -1,7 +1,7 @@
 [
   {
     "title": "APIs - As Products",
-    "date": "2025-08-17",
+    "date": "2025-08-25",
     "excerpt": "APIs are labeled as a lot of things, but this post explores what APIs truly are - Products.",
     "category": "General",
     "readTime": "3 min read",
@@ -9,7 +9,7 @@
     "published": true,
     "tags": [
       "APIs",
-      "Product Management"
+      "Product-Management"
     ],
     "slug": "apis-as-products"
   },
@@ -18,7 +18,7 @@
     "date": "2025-08-17T00:00:00.000Z",
     "excerpt": "How I used vibe coding to create this site and blog content creation workflow.",
     "category": "Exploration",
-    "readTime": "2 min read",
+    "readTime": "3 min read",
     "imageUrl": "/images/creating-my-blog.jpeg",
     "published": true,
     "tags": [
