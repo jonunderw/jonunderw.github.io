@@ -1,0 +1,88 @@
+---
+title: Create this Site - The Beginning of My Friendship with AI
+date: 2025-08-17
+excerpt: How I used vibe coding to create this site and blog content creation workflow.
+category: Exploration
+readTime: 2 min read
+imageUrl: /images/creating-my-blog.jpeg
+published: true
+tags: ["Vibe-Coding", "Prompt-Engineering", "Product-Development"]
+slug: "creating-my-blog"
+---
+
+---
+### Intro  
+I have always wanted to create my own personal blog as a place to explore and share new ideas, technologies, lessons learned, how-tos, and product and engineering philosophies. I also wanted the freedom to design it without constraints from platforms or template sites.
+
+With the emergence of vibe coding and other AI tooling, I thought now is the best time to give it a try. I thought that this would also provide a great way to learn and utilize many of the new tools available.
+
+With these motivations in mind, about six weeks ago, I used a free weekend to start building. This momentum laid the groundwork for a focused approach in planning and design.
+
+  
+---  
+### Getting Started
+
+##### Design  
+I started by treating this site as a product, so first I defined my primary objectives:  
+- Clean and customizable UI  
+- Cost-effective hosting  
+- Solution for easily adding new content  
+- Use and improve my skills with AI tooling
+
+Next, I designed the structure of my site. I landed on a general structure of:  
+- Home Page - *Clean UI that clearly sets the expectation of the content on the site and topics that I explore in my blog posts.*  
+- About Page - *A place to include all of my Resume or LinkedIn Profile type content, along with more professional and personal timelines, and other personal details.*  
+- Blog Page - *Landing page for all blog posts*  
+- Projects - *A page that lists out all of my other Projects within my GitHub. Currently, it is largely just CLI tools that I built to use / experiment with in my day-to-day.*
+
+With the design and structure outlined, my next step was to define the tech stack, infrastructure, and scaling strategy (in this case, content generation). These decisions shaped the direction of the site creation and development, as detailed in the following sections.
+
+##### Site Creation, Tech Stack, & Vibe Coding  
+From there, I began researching how to build the site. I found many blog options, but most required templates or builder UIs, which would limit my customization and AI tool usage. I chose Node, ReactJS with Vite, TypeScript, and Tailwind CSS for styling. I had past experience with AngularJS as an engineer, so I was partial to component-backed frameworks or libraries. I knew I could structure reusable components and debug issues confidently, with CoPilot's help. I had not used React or Tailwind CSS before building this site. I selected this stack after spending a few hours researching and browsing the TailwindCSS site for styling ideas. I set up CoPilot in VS Code and began building, utilizing Vibe coding prompts, context engineering, and testing along the way.    
+- For design help, I gave CoPilot screenshots and links to the TailwindCSS features I wanted to use for each page.    
+- For setting up the build pipeline locally and remotely, I largely used CoPilot to help troubleshoot along the way. Providing the error output with the context of where the error occurred in the overall pipeline.  
+- For help with logo creation, I used CoPilot to create SVGs until I decided on the one I liked the most.
+
+##### Hosting and CI/CD pipelines  
+I identified cost-effective hosting and deployment solutions. After comparing options, I chose GitHub Pages and GitHub Actions to automate the publication of new content. Since I was already using GitHub for code, and both services are free with no major limitations, this choice was easy.
+
+##### Content Creation Workflow  
+Next, I planned my content creation workflow. I use Obsidian for nearly everything, so I knew I'd write my blogs in Markdown. I researched workflows for piping Markdown blogs into my site. I explored several static site generators, such as Jekyll, but ultimately built a custom pre-build pipeline with CoPilot and ChatGPT. In short, the workflow goes like this:
+
+- First, I outline the blog I want to write in Obsidian, listing the main topics, subtopics, and overall structure. After gathering enough research, I use NotebookLLM to generate a mind map from this material. Reviewing the mind map helps me ensure that my research aligns with my outline. This step also allows me to identify sections that may require additional detail or refinement.
+- Second, I check the mind map for completeness. Once satisfied, I write the first draft of the blog post. While drafting, I use Grammarly AI to help with grammar and consistency. I focus on making the text concise, using visuals or tables for clarity, and keeping my unique perspective. Grammarly's prompts support these goals during the writing process.
+- Third, after finalizing the draft, I import it into my site’s repository. To simplify this, I use the Commander extension in Obsidian for one-click automation, instantly moving the blog into the correct folder. I also configure the Homepage and Dataview plugins to display my current blog statuses — In-Progress, In-Planning, Published, and Ice-Boxed topics — automatically every time I open my blog vault.
+- Fourth, during the automated build process, I run a Node utility that gathers all markdown files from my blogs folder and generates a JSON file for each one. Each JSON file contains metadata, including image URL, category, tags, references, and title. My reusable blogPost component then uses these JSON files to display the blog posts at runtime, which removes the need to create separate components for every post.  
+- Fifth, I update my CSS files to improve the styling within the markdown content of each blog post if needed.  
+
+Once my site was built, with hosting and CI/CD pipelines running as planned and a viable content creation workflow established, I turned my attention to refining content presentation and adding enhanced media. This brings me to planning the next steps for the blog's growth.  
+
+  
+##### Next Steps  
+Next, I will continue to add more content. I have several topics in progress, from conceptual and informational blogs to more exploratory posts on tools like Loveable, Cursor, Replit, and n8n. I also want to try more Vibe Coding by enhancing my existing CLI tools, exploring some "big ideas," or adding more automation to my daily tasks.  
+
+  
+##### Summary of Tools  
+In conclusion, here's a summary of the full list of tools I used to build this site and how I used them:  
+
+| Tool                                        | Use-Case                               |
+| ------------------------------------------- | -------------------------------------- |
+| GitHub Copilot (Claude Sonnet & GPT models) | Vibe Coding, code assistance in VSCode |
+| VSCode                                      | IDE for development                    |
+| Node                                        | Tech stack backend development         |
+| ReactJS                                     | Tech stack frontend development        |
+| Tailwind CSS                                | Tech stack styling                     |
+| GitHub Copilot                              | SVG generation                         |
+| MidJourney                                  | Blog cover photo generation            |
+| ChatGPT, Grok, Perplexity                   | Deep search & research notes           |
+| NotebookLLM, ChatGPT                        | Research summarization & synthesizing  |
+| NotebookLLM                                 | MindMaps                               |
+| Obsidian                                    | Notes application                      |
+| GitHub Pages & Actions                      | Hosting & automated deployment         |
+| NotebookLLM                                 | Audio summaries of blogs               |
+
+##### Conclusion  
+Building this site and exploring new tools has been an eye-opening experience. Although it's still unclear how these changes will affect Product Engineering, I believe these tools will help professionals more than replace us. If there’s one thing I’ve learned, it's that once the change is embraced, the fun actually begins.
+
+
+---

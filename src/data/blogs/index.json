@@ -14,17 +14,18 @@
     "slug": "apis-as-products"
   },
   {
-    "title": "Example Blog",
-    "date": "2024-06-01",
-    "excerpt": "This is the first post on my new blog. Stay tuned for more updates and exciting content!",
-    "category": "General",
-    "readTime": "3 min read",
-    "imageUrl": "https://via.placeholder.com/400x250",
+    "title": "Create this Site - The Beginning of My Friendship with AI",
+    "date": "2025-08-17T00:00:00.000Z",
+    "excerpt": "How I used vibe coding to create this site and blog content creation workflow.",
+    "category": "Exploration",
+    "readTime": "2 min read",
+    "imageUrl": "/images/creating-my-blog.jpeg",
     "published": true,
     "tags": [
-      "react",
-      "mdx"
+      "Vibe-Coding",
+      "Prompt-Engineering",
+      "Product-Development"
     ],
-    "slug": "example-blog"
+    "slug": "creating-my-blog"
   }
 ]

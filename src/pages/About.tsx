@@ -188,41 +188,41 @@ const AboutPage: React.FC = () => (
             </div>
           </div>
 
-           {/* Enhanced Hobbies Section */}
-        <div className="overflow-hidden rounded-3xl bg-gradient-to-br from-[#132e2e] to-[#10172a] shadow-lg border border-green-900/40 relative">
-          <div className="absolute inset-0 bg-gradient-to-br from-green-900/30 to-emerald-900/30 opacity-60"></div>
-          <div className="relative p-8">
-            <div className="flex items-center mb-6">
-              <div className="h-12 w-12 rounded-lg bg-green-600 flex items-center justify-center mr-4">
-                <svg className="h-6 w-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-                </svg>
-              </div>
-              <h2 className="text-2xl font-bold text-white">Hobbies & Interests</h2>
-            </div>
-            <div className="space-y-6">
-              {hobbies.map((hobbyGroup) => (
-                <div key={hobbyGroup.group}>
-                  <div className="flex items-center mb-2">
-                    <span className={`inline-block w-3 h-3 rounded-full mr-2 ${hobbyGroup.color}`}></span>
-                    <span className="text-lg font-semibold text-white">{hobbyGroup.group}</span>
-                  </div>
-                  <div className="flex flex-wrap gap-2">
-                    {hobbyGroup.items.map((item) => (
-                      <span
-                        key={item}
-                        className={`px-3 py-1 text-xs font-medium text-white ${hobbyGroup.color} ${hobbyGroup.border} rounded-full shadow-sm`}
-                      >
-                        {item}
-                      </span>
-                    ))}
-                  </div>
+          {/* Enhanced Hobbies Section */}
+          <div className="overflow-hidden rounded-3xl bg-gradient-to-br from-[#132e2e] to-[#10172a] shadow-lg border border-green-900/40 relative">
+            <div className="absolute inset-0 bg-gradient-to-br from-green-900/30 to-emerald-900/30 opacity-60"></div>
+            <div className="relative p-8">
+              <div className="flex items-center mb-6">
+                <div className="h-12 w-12 rounded-lg bg-green-600 flex items-center justify-center mr-4">
+                  <svg className="h-6 w-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                  </svg>
                 </div>
-              ))}
+                <h2 className="text-2xl font-bold text-white">Hobbies & Interests</h2>
+              </div>
+              <div className="space-y-6">
+                {hobbies.map((hobbyGroup) => (
+                  <div key={hobbyGroup.group}>
+                    <div className="flex items-center mb-2">
+                      <span className={`inline-block w-3 h-3 rounded-full mr-2 ${hobbyGroup.color}`}></span>
+                      <span className="text-lg font-semibold text-white">{hobbyGroup.group}</span>
+                    </div>
+                    <div className="flex flex-wrap gap-2">
+                      {hobbyGroup.items.map((item) => (
+                        <span
+                          key={item}
+                          className={`px-3 py-1 text-xs font-medium text-white ${hobbyGroup.color} ${hobbyGroup.border} rounded-full shadow-sm`}
+                        >
+                          {item}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
-      </div>
 
         {/* Row 3: Career Timeline & Personal Timeline */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
@@ -331,24 +331,24 @@ const AboutPage: React.FC = () => (
           <div className="absolute inset-0 bg-gradient-to-br from-cyan-900/30 to-indigo-900/30 opacity-60"></div>
           <div className="relative p-8">
             <h2 className="text-2xl font-bold text-white mb-8 text-center">Let's Connect</h2>
-            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            <div className="flex flex-wrap justify-center gap-6">
               {socialHandles.map((social) => (
                 <a
                   key={social.name}
                   href={social.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group relative rounded-2xl border border-cyan-900/40 bg-[#10172a] p-6 shadow-sm hover:border-cyan-400 hover:shadow-md transition-all duration-200"
+                  className="group relative rounded-2xl border border-cyan-900/40 bg-[#10172a] p-6 shadow-sm hover:border-cyan-400 hover:shadow-md transition-all duration-200 w-64"
                 >
-                  <div className="flex items-center space-x-3">
+                  <div className="flex items-center justify-center space-x-3">
                     <div className="flex-shrink-0 text-cyan-400 group-hover:text-cyan-300 transition-colors">
                       {social.icon}
                     </div>
-                    <div className="min-w-0 flex-1">
-                      <p className="text-sm font-medium text-white group-hover:text-cyan-300 transition-colors">
+                    <div className="min-w-0">
+                      <p className="text-sm font-medium text-white group-hover:text-cyan-300 transition-colors text-center">
                         {social.name}
                       </p>
-                      <p className="text-sm text-cyan-200 truncate">
+                      <p className="text-sm text-cyan-200 truncate text-center">
                         {social.handle}
                       </p>
                     </div>

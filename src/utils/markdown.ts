@@ -48,11 +48,20 @@ const processor = remark()
 
 export function getAllPostSlugs(): string[] {
   console.log(postsDirectory);
-  return fs.readdirSync(postsDirectory).map((file) => file.replace(/\.mdx?$/, ""));
+  // Get all files and filter to only include .mdx files
+  return fs.readdirSync(postsDirectory)
+    .filter(file => file.endsWith('.mdx') && !file.startsWith('.'))
+    .map(file => file.replace(/\.mdx$/, ''));
 }
 
 export async function getPostBySlug(slug: string): Promise<ParsedMarkdown> {
   const filePath = path.join(postsDirectory, `${slug}.mdx`);
+  
+  // Check if file exists
+  if (!fs.existsSync(filePath)) {
+    throw new Error(`File not found: ${filePath}`);
+  }
+  
   const rawContent = fs.readFileSync(filePath, "utf-8");
   const { data: frontmatter, content } = matter(rawContent);
 

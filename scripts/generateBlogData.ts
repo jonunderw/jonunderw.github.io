@@ -4,6 +4,7 @@ import { getAllPosts, calculateReadTime } from "../src/utils/markdown.js";
 
 (async () => {
   const outDir = path.join(process.cwd(), "src/data/blogs");
+  const blogsDir = path.join(process.cwd(), "src/content/blogs");
   
   // Clean the output directory first
   if (fs.existsSync(outDir)) {
@@ -34,6 +35,14 @@ import { getAllPosts, calculateReadTime } from "../src/utils/markdown.js";
   // Generate index of post metadata
   const indexData = posts.map((p) => p.meta);
   fs.writeFileSync(path.join(outDir, `index.json`), JSON.stringify(indexData, null, 2));
+
+  // Get all markdown and mdx files in the blogs directory
+  const mdFiles = fs
+    .readdirSync(blogsDir)
+    .filter(file => 
+      (file.endsWith('.md') || file.endsWith('.mdx')) && 
+      !file.startsWith('.DS_Store')
+    );
 
   console.log(`Generated ${posts.length} blog posts as JSON files`);
 })();
