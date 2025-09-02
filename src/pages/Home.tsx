@@ -35,7 +35,7 @@ const HomePage: React.FC = () => {
                     About Me
                   </Link>
                   <a
-                    href="mailto:jon@example.com"
+                    href="mailto:jon.underw@gmail.com"
                     className="inline-flex items-center justify-center rounded-md border border-cyan-400 bg-transparent px-8 py-3 text-base font-semibold text-cyan-400 hover:bg-cyan-400 hover:text-[#10172a] focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:ring-offset-2 transition-colors shadow-lg"
                   >
                     Get in Touch
